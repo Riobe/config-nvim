@@ -23,58 +23,58 @@
     " Toggle line numbering mode on focus and insert mode
     Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-    " File explorer
-    Plugin 'scrooloose/nerdtree'
+    " " File explorer
+    " Plugin 'scrooloose/nerdtree'
 
-    " Toggle NERDTree
-    "nnoremap <c-n> :NERDTreeToggle<CR>
+    " " Toggle NERDTree
+    " "nnoremap <c-n> :NERDTreeToggle<CR>
 
-    " Find current file in NERDTree
-    "nnoremap <leader>f :NERDTreeFind<CR>
+    " " Find current file in NERDTree
+    " "nnoremap <leader>f :NERDTreeFind<CR>
 
-    " Filter node_modules from NERDTree
-    let g:NERDTreeIgnore=['node_modules$[[dir]]', 'dist$[[dir]]']
+    " " Filter node_modules from NERDTree
+    " let g:NERDTreeIgnore=['node_modules$[[dir]]', 'dist$[[dir]]']
 
-    "Close vim if the only window left open is NERDTree
-    " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " "Close vim if the only window left open is NERDTree
+    " " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-    " Use this option to tell the script when (if at all) to change the current
-    " working directory (CWD) for vim.
+    " " Use this option to tell the script when (if at all) to change the current
+    " " working directory (CWD) for vim.
 
-    " If it is set to 0 then the CWD is never changed by the NERD tree.
+    " " If it is set to 0 then the CWD is never changed by the NERD tree.
 
-    " If set to 1 then the CWD is changed when the NERD tree is first loaded to the
-    " directory it is initialized in. For example, if you start the NERD tree with >
-    "     :NERDTree /home/marty/foobar
-    " <
-    " then the CWD will be changed to /home/marty/foobar and will not be changed
-    " again unless you init another NERD tree with a similar command.
+    " " If set to 1 then the CWD is changed when the NERD tree is first loaded to the
+    " " directory it is initialized in. For example, if you start the NERD tree with >
+    " "     :NERDTree /home/marty/foobar
+    " " <
+    " " then the CWD will be changed to /home/marty/foobar and will not be changed
+    " " again unless you init another NERD tree with a similar command.
 
-    " If the option is set to 2 then it behaves the same as if set to 1 except that
-    " the CWD is changed whenever the tree root is changed. For example, if the CWD
-    " is /home/marty/foobar and you make the node for /home/marty/foobar/baz the new
-    " root then the CWD will become /home/marty/foobar/baz.
-    let g:NERDTreeChDirMode = 2
-    function ChangeDirectory(dir, ...)
+    " " If the option is set to 2 then it behaves the same as if set to 1 except that
+    " " the CWD is changed whenever the tree root is changed. For example, if the CWD
+    " " is /home/marty/foobar and you make the node for /home/marty/foobar/baz the new
+    " " root then the CWD will become /home/marty/foobar/baz.
+    " let g:NERDTreeChDirMode = 2
+    " function ChangeDirectory(dir, ...)
 
-      let &cdpath = ',' . getcwd()
+      " let &cdpath = ',' . getcwd()
 
-      exe "bufdo! " . "cd " . (a:dir)
+      " exe "bufdo! " . "cd " . (a:dir)
 
-      let stay = exists("a:1") ? a:1 : 1
+      " let stay = exists("a:1") ? a:1 : 1
 
-        NERDTree
+        " NERDTree
 
-        if !stay
-          wincmd p
-        endif
+        " if !stay
+          " wincmd p
+        " endif
 
-      wincmd l
+      " wincmd l
 
-    endfunction
+    " endfunction
 
-    " Git status in nerdtree
-    Plugin 'Xuyuanp/nerdtree-git-plugin'
+    " " Git status in nerdtree
+    " Plugin 'Xuyuanp/nerdtree-git-plugin'
 
     " Be able to change/add/delete surround characters/tags
     Plugin 'tpope/vim-surround'
@@ -92,21 +92,21 @@
     " Plugin 'easymotion/vim-easymotion'
 
     " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
-    Plugin 'kien/ctrlp.vim'
+    " Plugin 'kien/ctrlp.vim'
 
     " Map CtrlP
-    let g:ctrlp_map = '<c-p>'
+    " let g:ctrlp_map = '<c-p>'
 
     " When invoked, unless a starting directory is specified, CtrlP will set its local working directory according to this variable
     "    'c' - the directory of the current file.
     "    'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
     "    'a' - like c, but only if the current working directory outside of CtrlP is not a direct ancestor of the directory of the current file.
     "    0 or '' (empty string) - disable this feature.
-    let g:ctrlp_working_path_mode = 'r'
-    let g:ctrlp_max_files = 0
-    let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|png)$)'
-    " Show dotfiles in ctrlp
-    let g:ctrlp_show_hidden = 1
+    " let g:ctrlp_working_path_mode = 'r'
+    " let g:ctrlp_max_files = 0
+    " let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn|png)$)'
+    " " Show dotfiles in ctrlp
+    " let g:ctrlp_show_hidden = 1
 
     " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
     Plugin 'w0rp/ale'
@@ -122,13 +122,13 @@
     let g:ale_fix_on_save = 1
 
     " Javascript highlighting/syntax
-    Plugin 'pangloss/vim-javascript'
+    " Plugin 'pangloss/vim-javascript'
 
     " " JSX highlighting
     " Plugin 'mxw/vim-jsx'
 
     " JSON highlighting/syntax
-    Plugin 'elzr/vim-json'
+    " Plugin 'elzr/vim-json'
 
     " " Syntax highlighting for pug (formerly jade)
     " Plugin 'digitaltoad/vim-pug'
@@ -147,23 +147,23 @@
     "Plugin 'Valloric/YouCompleteMe'
 
     " Typescript syntax highlighting
-    Plugin 'leafgarland/typescript-vim'
+    " Plugin 'leafgarland/typescript-vim'
 
     " Async execution library (Used by tsuquyomi)
-    Plugin 'Shougo/vimproc.vim'
+    " Plugin 'Shougo/vimproc.vim'
 
     " Typescript IDE features
-    Plugin 'Quramy/tsuquyomi'
+    " Plugin 'Quramy/tsuquyomi'
 
     " If set, Tsuquyomi generates import blocks using single quotes
     " instead of double quotes when |:TsuquyomiImport|.
-    let g:tsuquyomi_single_quote_import = 1
+    " let g:tsuquyomi_single_quote_import = 1
 
     " Syntax highlighting for.... everything
-    Plugin 'sheerun/vim-polyglot'
+    " Plugin 'sheerun/vim-polyglot'
 
     " Live previewing of markdown files
-    Plugin 'shime/vim-livedown'
+    " Plugin 'shime/vim-livedown'
 
     " " Makes editing tables easier.
     " Plugin 'dhruvasagar/vim-table-mode'
@@ -254,16 +254,16 @@
     " source control (for instance). Think of it as "<leader> edit"
     nnoremap <leader>e :e!<CR>
 
+    " Fix to handle bug I'm only seeing on Mac so far with a buffer going
+    " unmodifiable. I'm thinking of this one as <leader>r(eload)
+    nnoremap <leader>r :set ma<CR>:e!<CR>
+
     " Allow for saving as sudo.
     cnoremap w!! w !sudo tee > /dev/null %
     cnoremap <expr> %% getcmdtype() == ':' ? expand ('%:h').'/' : '%%'
 
     " Make vim write to filestystem on :w
     set backupcopy=yes
-
-    " Fix to handle bug I'm only seeing on Mac so far with a buffer going
-    " unmodifiable. I'm thinking of this one as <leader>r(eload)
-    nnoremap <leader>r :set ma<CR>:e!<CR>
 "}
 
 " { Visual
@@ -448,7 +448,7 @@
     "  preview  Show extra information about the currently selected
     "     completion in the preview window.  Only works in
     "     combination with "menu" or "menuone".
-    set completeopt-=preview
+    "set completeopt-=preview
 
     " Set startup directory.
     cd ~/dev
@@ -616,11 +616,11 @@
 
 " { Snippet configuration.
   " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-  let g:UltiSnipsExpandTrigger="<C-k>"
-  let g:UltiSnipsJumpForwardTrigger="<C-f>"
-  let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+  " let g:UltiSnipsExpandTrigger="<C-k>"
+  " let g:UltiSnipsJumpForwardTrigger="<C-f>"
+  " let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
-  let g:UltiSnipsSnippetDirectories = ['/home/prijer01/.vim/ultisnips']
+  " let g:UltiSnipsSnippetDirectories = ['/home/prijer01/.vim/ultisnips']
 "}
 
 " { Sessions
@@ -651,34 +651,34 @@
 
 " { Use ag for searching
   " The Silver Searcher
-  if executable('ag')
-    " Use ag over grep
-    set grepprg=ag\ --nogroup\ --nocolor
+  " if executable('ag')
+    " " Use ag over grep
+    " set grepprg=ag\ --nogroup\ --nocolor
 
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-    " ag is fast enough that CtrlP doesn't need to cache
-    " let g:ctrlp_use_caching = 0
-    " (That *should* be true unless you're in a mono repo D:)
-  endif
+    " " ag is fast enough that CtrlP doesn't need to cache
+    " " let g:ctrlp_use_caching = 0
+    " " (That *should* be true unless you're in a mono repo D:)
+  " endif
 
   " Remap K into something actually *useful*: searching for the word under the
   " cursor instead of running man on it.
   " nnoremap <expr> K yiw:grep! '\bEscapeText('<C-R>"')\b'<CR>:cw<CR>
-  nnoremap <expr> K ":grep! -Q " .. expand("<cword>") ..  "<CR>:cw<CR>"
+  " nnoremap <expr> K ":grep! -Q " .. expand("<cword>") ..  "<CR>:cw<CR>"
 
   " Have a way to browse the quickfix list and have a simple combination to
   " hit to open the spot under the cursor.
   "nnoremap <leader>o :.cc<CR>
 
   " Create command to search with ag called AG (Very creative) and bind it
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-  nnoremap <leader>s :Ag<SPACE>
+  " command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  " nnoremap <leader>s :Ag<SPACE>
 
   " Ag integration
   " Can use "ag --vimgrep" to report every match on the line.
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
 " }
 
 lua require('config')
