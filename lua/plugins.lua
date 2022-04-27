@@ -210,6 +210,11 @@ local packer = require('packer').startup(function(use)
     "startup-nvim/startup.nvim",
     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
   }
+
+  -- A neovim plugin to persist and toggle multiple terminals during an editing session
+  --
+  -- https://github.com/akinsho/toggleterm.nvim
+  use {"akinsho/toggleterm.nvim"}
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated
