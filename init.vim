@@ -21,7 +21,7 @@
     let g:airline#extensions#ale#enabled = 1
 
     " Toggle line numbering mode on focus and insert mode
-    Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+    "Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
     " File explorer
     Plugin 'scrooloose/nerdtree'

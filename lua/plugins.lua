@@ -215,6 +215,12 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/akinsho/toggleterm.nvim
   use {"akinsho/toggleterm.nvim"}
+
+  -- Disables relative line numbers when they don't make sense,
+  -- e.g. when entering insert mode.
+  --
+  -- https://github.com/nkakouros-original/numbers.nvim
+  use "nkakouros-original/numbers.nvim"
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated
