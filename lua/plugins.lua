@@ -185,16 +185,16 @@ local packer = require('packer').startup(function(use)
   -- A File Explorer For Neovim Written In Lua
   --
   -- https://github.com/kyazdani42/nvim-tree.lua
-  use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        -- A lua fork of vim-devicons. This plugin provides the same icons as well as
-        -- colors for each icon.
-        --
-        -- https://github.com/kyazdani42/nvim-web-devicons
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      }
-  }
+  -- use {
+      -- 'kyazdani42/nvim-tree.lua',
+      -- requires = {
+        -- -- A lua fork of vim-devicons. This plugin provides the same icons as well as
+        -- -- colors for each icon.
+        -- --
+        -- -- https://github.com/kyazdani42/nvim-web-devicons
+        -- 'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      -- }
+  -- }
 
   use 'kyazdani42/nvim-web-devicons'
 end)

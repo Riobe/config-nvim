@@ -53,10 +53,10 @@ whichKey.register({
 
 whichKey.register({
     name = "File Navigation",
-    ["<C-n>"] = { "<cmd>NvimTreeToggle<CR>", "Toggle File Explorer" },
-    ["<leader>f"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Current File in Explorer" },
-    -- ["<C-n>"] = { "<cmd>NERDTreeToggle<CR>", "Toggle File Explorer" },
-    -- ["<leader>f"] = { "<cmd>NERDTreeFind<CR>", "Current File in Explorer" }
+    -- ["<C-n>"] = { "<cmd>NvimTreeToggle<CR>", "Toggle File Explorer" },
+    -- ["<leader>f"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Current File in Explorer" },
+    ["<C-n>"] = { "<cmd>NERDTreeToggle<CR>", "Toggle File Explorer" },
+    ["<leader>f"] = { "<cmd>NERDTreeFind<CR>", "Current File in Explorer" }
 })
 
 whichKey.register({

@@ -23,58 +23,53 @@
     " Toggle line numbering mode on focus and insert mode
     Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-    " " File explorer
-    " Plugin 'scrooloose/nerdtree'
+    " File explorer
+    Plugin 'scrooloose/nerdtree'
 
-    " " Toggle NERDTree
-    " "nnoremap <c-n> :NERDTreeToggle<CR>
+    " Toggle NERDTree
+    "nnoremap <c-n> :NERDTreeToggle<CR>
 
-    " " Find current file in NERDTree
-    " "nnoremap <leader>f :NERDTreeFind<CR>
+    " Find current file in NERDTree
+    "nnoremap <leader>f :NERDTreeFind<CR>
 
-    " " Filter node_modules from NERDTree
-    " let g:NERDTreeIgnore=['node_modules$[[dir]]', 'dist$[[dir]]']
+    " Filter node_modules from NERDTree
+    let g:NERDTreeIgnore=['node_modules$[[dir]]', 'dist$[[dir]]']
 
-    " "Close vim if the only window left open is NERDTree
-    " " autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    "Close vim if the only window left open is NERDTree
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-    " " Use this option to tell the script when (if at all) to change the current
-    " " working directory (CWD) for vim.
+    " Use this option to tell the script when (if at all) to change the current
+    " working directory (CWD) for vim.
 
-    " " If it is set to 0 then the CWD is never changed by the NERD tree.
+    " If it is set to 0 then the CWD is never changed by the NERD tree.
 
-    " " If set to 1 then the CWD is changed when the NERD tree is first loaded to the
-    " " directory it is initialized in. For example, if you start the NERD tree with >
-    " "     :NERDTree /home/marty/foobar
-    " " <
-    " " then the CWD will be changed to /home/marty/foobar and will not be changed
-    " " again unless you init another NERD tree with a similar command.
+    " If set to 1 then the CWD is changed when the NERD tree is first loaded to the
+    " directory it is initialized in. For example, if you start the NERD tree with >
+    "     :NERDTree /home/marty/foobar
+    " <
+    " then the CWD will be changed to /home/marty/foobar and will not be changed
+    " again unless you init another NERD tree with a similar command.
+    " If the option is set to 2 then it behaves the same as if set to 1 except that
+    " the CWD is changed whenever the tree root is changed. For example, if the CWD
+    " is /home/marty/foobar and you make the node for /home/marty/foobar/baz the new
+    " root then the CWD will become /home/marty/foobar/baz.
+    let g:NERDTreeChDirMode = 2
+    function ChangeDirectory(dir, ...)
+      let &cdpath = ',' . getcwd()
+      exe "bufdo! " . "cd " . (a:dir)
+      let stay = exists("a:1") ? a:1 : 1
 
-    " " If the option is set to 2 then it behaves the same as if set to 1 except that
-    " " the CWD is changed whenever the tree root is changed. For example, if the CWD
-    " " is /home/marty/foobar and you make the node for /home/marty/foobar/baz the new
-    " " root then the CWD will become /home/marty/foobar/baz.
-    " let g:NERDTreeChDirMode = 2
-    " function ChangeDirectory(dir, ...)
+      " NERDTree
 
-      " let &cdpath = ',' . getcwd()
+      if !stay
+        wincmd p
+      endif
 
-      " exe "bufdo! " . "cd " . (a:dir)
+      wincmd l
+    endfunction
 
-      " let stay = exists("a:1") ? a:1 : 1
-
-        " NERDTree
-
-        " if !stay
-          " wincmd p
-        " endif
-
-      " wincmd l
-
-    " endfunction
-
-    " " Git status in nerdtree
-    " Plugin 'Xuyuanp/nerdtree-git-plugin'
+    " Git status in nerdtree
+    Plugin 'Xuyuanp/nerdtree-git-plugin'
 
     " Be able to change/add/delete surround characters/tags
     Plugin 'tpope/vim-surround'
@@ -111,14 +106,14 @@
     " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
     Plugin 'w0rp/ale'
 
-    let g:ale_linters = {
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'typescript': ['prettier', 'tslint']
-      \ }
-    let g:ale_fixers = {
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'typescript': ['prettier', 'tslint']
-      \ }
+    " let g:ale_linters = {
+      " \ 'javascript': ['prettier', 'eslint'],
+      " \ 'typescript': ['prettier', 'tslint']
+      " \ }
+    " let g:ale_fixers = {
+      " \ 'javascript': ['prettier', 'eslint'],
+      " \ 'typescript': ['prettier', 'tslint']
+      " \ }
     let g:ale_fix_on_save = 1
 
     " Javascript highlighting/syntax
