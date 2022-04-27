@@ -196,7 +196,20 @@ local packer = require('packer').startup(function(use)
       -- }
   -- }
 
+  -- A lua fork of vim-devicons. This plugin provides the same icons as well
+  -- as colors for each icon.
+  --
+  -- https://github.com/kyazdani42/nvim-web-devicons
   use 'kyazdani42/nvim-web-devicons'
+
+  -- The fully customizable greeter for Neovim
+  -- NOTE: Just for fun, I liked the hydra on startup.
+  --
+  -- https://github.com/startup-nvim/startup.nvim
+  use {
+    "startup-nvim/startup.nvim",
+    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+  }
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated
