@@ -154,6 +154,12 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/numToStr/Comment.nvim
   use 'numToStr/Comment.nvim'
+
+  -- An always-on highlight for a unique character in every word on a
+  -- line to help you use f, F and family.
+  --
+  -- https://github.com/unblevable/quick-scope
+  use 'unblevable/quick-scope'
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated

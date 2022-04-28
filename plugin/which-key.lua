@@ -100,7 +100,11 @@ whichKey.register({
       b = { "<cmd>Telescope buffers<CR>", "Fuzzy Buffer Search" },
       h = { "<cmd>Telescope help_tags<CR>", "Fuzzy Help Tag Search" },
       t = { "<cmd>Telescope<CR>", "All Telescope Options" },
-    }
+    },
+    ["<leader>d"] = {
+      d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Goto Definition", },
+      r = { "<cmd>Telescope lsp_references<cr>", "Goto References" },
+    },
 })
 
 whichKey.register({
