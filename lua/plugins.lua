@@ -13,8 +13,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     })
 end
 
-vim.lsp.set_log_level("debug")
-
 -- Load packer plugins on startup.
 local packer = require('packer').startup(function(use)
   -- Packer can manage itself
@@ -31,7 +29,6 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/folke/which-key.nvim
   use { "folke/which-key.nvim" }
-
 
   -- Git source for hrsh7th/nvim-cmp
   --
@@ -152,6 +149,11 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/nkakouros-original/numbers.nvim
   use "nkakouros-original/numbers.nvim"
+
+  -- Smart and Powerful commenting plugin for Neovim
+  --
+  -- https://github.com/numToStr/Comment.nvim
+  use 'numToStr/Comment.nvim'
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated
