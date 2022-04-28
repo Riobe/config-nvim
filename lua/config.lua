@@ -11,4 +11,5 @@
 
 --This list is by no means comprehensive. If you wish to know more about what's made available by the vim variable, :help lua-stdlib and :help lua-vim are the way to go. Alternatively, you can do :lua print(vim.inspect(vim)) to get a list of every module. API functions are documented under :help api-global.
 
+require('options')
 require('plugins')
