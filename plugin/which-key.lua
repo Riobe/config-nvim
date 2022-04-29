@@ -134,7 +134,7 @@ whichKey.register({
     t = { "<cmd>term<cr>i", "Pane" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>splitright <cr>|<cmd> term<cr>i", "Vertical" },
+		v = { "<cmd>vsplit <cr>|<cmd> term<cr>i", "Vertical" },
 	},
 }, { prefix = "<leader>", })
 
