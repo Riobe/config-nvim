@@ -93,6 +93,7 @@ whichKey.register({
     ["<C-s>"]   = { "<cmd>Telescope live_grep<CR>", "Grep in Project" },
     ["K"] =  { "<cmd>Telescope grep_string<CR>", "Grep String Under Cursor" },
     ["<C-t>"] = { "<cmd>Telescope treesitter<CR>", "Find language tokens" },
+    ["<C-c>"] = { "<cmd>Telescope buffers<CR>", "Fuzzy Buffer Search" },
     ["<leader>s"] = {
       name = "Telescope Searching",
       f = { "<cmd>Telescope find_files<CR>", "Fuzzy File Search" },
@@ -106,20 +107,6 @@ whichKey.register({
       r = { "<cmd>Telescope lsp_references<cr>", "Goto References" },
     },
 })
-
-whichKey.register({
-    name = "Miscellaneous",
-    -- Uses the currently open file.
-    cd = { "<cmd>cd %:p:h<cr>:pwd<CR>", "Move PWD Here" },
-    sc = { "<cmd>setlocal spell!<CR>", "Toggle Spell Check" },
-    -- I've had vim set a file as unmodifiable and it just needs reopened.
-    -- I have no idea why, but this technique will make it modifiable again.
-    m  = { "<cmd>set ma<cr>:set filetype?<cr>", "Make Buffer Modifiable" },
-    -- Does what it says, the commands are write-only code.
-    ["<leader>m"]  = { "mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm", "Remove Windows Line-Ending" },
-    -- Pop open a pretty glow preview
-    p = { "<cmd>Glow<CR>", "Open Glow MD Preview" }
-}, { prefix = "<leader>", })
 
 whichKey.register({
     name = "File Navigation",
@@ -136,3 +123,30 @@ whichKey.register({
     ["<C-h>"] = { "<C-W>h", "Navigate Window Left" },
     ["<C-l>"] = { "<C-W>l", "Navigate Window Right" },
 })
+
+whichKey.register({
+	t = {
+		name = "Terminal",
+		-- n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+		-- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+		-- t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+		-- p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		v = { "<cmd>vsplit <cr>|<cmd> term<cr>i", "Vertical" },
+	},
+}, { prefix = "<leader>", })
+
+whichKey.register({
+    name = "Miscellaneous",
+    -- Uses the currently open file.
+    cd = { "<cmd>cd %:p:h<cr>:pwd<CR>", "Move PWD Here" },
+    sc = { "<cmd>setlocal spell!<CR>", "Toggle Spell Check" },
+    -- I've had vim set a file as unmodifiable and it just needs reopened.
+    -- I have no idea why, but this technique will make it modifiable again.
+    m  = { "<cmd>set ma<cr>:set filetype?<cr>", "Make Buffer Modifiable" },
+    -- Does what it says, the commands are write-only code.
+    ["<leader>m"]  = { "mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm", "Remove Windows Line-Ending" },
+    -- Pop open a pretty glow preview
+    p = { "<cmd>Glow<CR>", "Open Glow MD Preview" }
+}, { prefix = "<leader>", })
