@@ -131,9 +131,10 @@ whichKey.register({
 		-- u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		-- t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		-- p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+    t = { "<cmd>term<cr>i", "Pane" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>vsplit <cr>|<cmd> term<cr>i", "Vertical" },
+		v = { "<cmd>splitright <cr>|<cmd> term<cr>i", "Vertical" },
 	},
 }, { prefix = "<leader>", })
 
