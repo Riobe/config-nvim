@@ -79,6 +79,10 @@ require('telescope').setup{
     --   },
     -- },
   },
+  -- Themes:
+  -- dropdown - Just a list in the middle of the screen
+  -- cursor - Small dropdown at where cursor is
+  -- ivy - Bottom of the screen
   pickers = {
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
@@ -87,6 +91,20 @@ require('telescope').setup{
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      -- theme = "dropdown",
+      -- previewer = true,
+      mappings = {
+        i = {
+          ["<C-d>"] = "delete_buffer",
+        },
+        n = {
+          ["<C-d>"] = "delete_buffer",
+        }
+      }
+    }
   },
   extensions = {
     -- Your extension configuration goes here:
