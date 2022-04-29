@@ -7,7 +7,7 @@ require("toggleterm").setup{
       return vim.o.columns * 0.4
     end
   end,
-  open_mapping = [[<leader>t]],
+  -- open_mapping = [[<leader>t]],
   -- on_open = fun(t: Terminal), -- function to run when the terminal opens
   -- on_close = fun(t: Terminal), -- function to run when the terminal closes
   -- on_stdout = fun(t: Terminal, job: number, data: string[], name: string) -- callback for processing output on stdout
@@ -52,4 +52,16 @@ require("toggleterm").setup{
     winblend = 3,
   }
 }
+function _G.set_terminal_keymaps()
+  local opts = { noremap = true }
+  vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<c-[>", [[<C-\><C-n>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
+  -- Window management. Ctrl + Vim Direction leaves term
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
+end
 
+vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
