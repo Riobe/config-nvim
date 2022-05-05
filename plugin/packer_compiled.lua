@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/marks.nvim",
     url = "https://github.com/chentau/marks.nvim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   ["numbers.nvim"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/numbers.nvim",
@@ -154,6 +159,16 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   ["quick-scope"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/quick-scope",
@@ -173,6 +188,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-code-dark"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-code-dark",
+    url = "https://github.com/tomasiser/vim-code-dark"
+  },
+  ["vs-tasks.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vs-tasks.nvim",
+    url = "https://github.com/EthanJWright/vs-tasks.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,

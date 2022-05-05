@@ -1,21 +1,18 @@
 -- A comma-separated list of options for Insert mode completion
 -- |ins-completion|.  The used values are:
--- 
---    menu	    Use a popup menu to show the possible completions.  The
--- 	    menu is only shown when there is more than one match and
--- 	    sufficient colors are available.  |ins-completion-menu|
--- 
+--
+--    menu    Use a popup menu to show the possible completions.  The
+--     menu is only shown when there is more than one match and
+--     sufficient colors are available.  |ins-completion-menu|
+--
 --    menuone  Use the popup menu also when there is only one match.
--- 	    Useful when there is additional information about the
--- 	    match, e.g., what file it comes from.
--- 
+--     Useful when there is additional information about the
+--     match, e.g., what file it comes from.
+--
 --   noselect  Do not select a match in the menu, force the user to
--- 	    select one from the menu. Only works in combination with
--- 	    "menu" or "menuone".
-vim.cmd([[
-set completeopt=menu,menuone,noselect
-]])
-
+--    select one from the menu. Only works in combination with
+--    "menu" or "menuone".
+vim.cmd('set completeopt=menu,menuone,noselect')
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
@@ -80,8 +77,8 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-  capabilities = capabilities
-}
+-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+--   capabilities = capabilities
+-- }

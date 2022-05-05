@@ -132,11 +132,11 @@
     Plugin 'flazz/vim-colorschemes'
 
     " Comments
-    Plugin 'scrooloose/nerdcommenter'
+    " Plugin 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims = 1
 
     " Fix use of tab from multiple completion plugins
-    Plugin 'ervandew/supertab'
+    " Plugin 'ervandew/supertab'
 
     " Code completion
     "Plugin 'Valloric/YouCompleteMe'
@@ -222,19 +222,19 @@
 
     " Set button to toggle line numbering. Can also use "cor" to toggle
     " relative and "con" to toggle absolute.
-    nnoremap <silent> <C-x> :set relativenumber!<cr>
+    " nnoremap <silent> <C-x> :set relativenumber!<cr>
 
     " Open .init.vim in a vertical split on the right.
     " botright (open next split in the bottom or right)
     " vsplit open vertical split.
-    nnoremap <leader>v :botright vsplit ~/.config/nvim/init.vim<CR>
+    " nnoremap <leader>v :botright vsplit ~/.config/nvim/init.vim<CR>
     " When done editing the .init.vim use this to quickly source it.
-    nnoremap <leader><leader>v :source ~/.config/nvim/init.vim<CR>
+    " nnoremap <leader><leader>v :source ~/.config/nvim/init.vim<CR>
 
     " Open .bashrc in a vertical split on the right.
     " botright (open next split in the bottom or right)
     " vsplit open vertical split.
-    nnoremap <leader>z :botright vsplit ~/.zshrc<CR>
+    " nnoremap <leader>z :botright vsplit ~/.zshrc<CR>
 
     " Make Ctrl-\ switch to the last open file.
     nnoremap <c-\> :b#<CR>
@@ -278,7 +278,11 @@
     " for the file "colors/{name}.vim".  The first one that
     " is found is loaded.
     try
-        colorscheme desertink
+        " colorscheme desertink
+        " colorscheme babymate256
+        " colorscheme blacklight
+        colorscheme codedark
+        highlight Normal ctermbg=236
     catch
     endtry
 
@@ -675,5 +679,7 @@
   " Can use "ag --vimgrep" to report every match on the line.
   " let g:ackprg = 'ag --nogroup --nocolor --column'
 " }
+
+set list listchars=trail:⎵
 
 lua require('config')

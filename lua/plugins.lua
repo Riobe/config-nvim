@@ -160,6 +160,46 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/unblevable/quick-scope
   use 'unblevable/quick-scope'
+
+  -- Written by Ethan Write, my co-worker from Yonomi/Allegion. :)
+  -- Handles letting you quickly run commands from a .vscode/tasks.json
+  --
+  -- https://github.com/EthanJWright/vs-tasks.nvim
+  use {
+    'EthanJWright/vs-tasks.nvim',
+    requires = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
+    }
+  }
+
+  -- project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+  -- (If it does say so itself)
+  -- Automagically cd to project directory using nvim lsp
+  --   Dependency free, does not rely on lspconfig
+  -- If no lsp then uses pattern matching to cd to root directory
+  -- Telescope integration :Telescope projects
+  --   Access your recently opened projects from telescope!
+  --   Asynchronous file io so it will not slow down vim when reading the history file on startup.
+  --
+  -- https://github.com/ahmedkhalf/project.nvim
+  use 'ahmedkhalf/project.nvim'
+
+  -- Like vscode?
+  use 'tomasiser/vim-code-dark'
+
+  -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
+  --
+  -- Motivation
+  -- Neovim's LSP ecosystem is growing, and plugins like telescope.nvim and trouble.nvim make it a joy to work with LSP features like code actions and diagnostics.
+  --
+  -- Unlike the VS Code and coc.nvim ecosystems, Neovim doesn't provide a way for non-LSP sources to hook into its LSP client. null-ls is an attempt to bridge that gap and simplify the process of creating, sharing, and setting up LSP sources using pure Lua.
+  --
+  -- null-ls is also an attempt to reduce the boilerplate required to set up general-purpose language servers and improve performance by removing the need for external processes.
+  --
+  --https://github.com/jose-elias-alvarez/null-ls.nvim
+  use 'jose-elias-alvarez/null-ls.nvim'
 end)
 
 -- Automatically run :PackerCompile whenever plugins.lua is updated
