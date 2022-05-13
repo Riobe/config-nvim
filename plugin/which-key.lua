@@ -79,7 +79,8 @@ local defaultOptions = {
 whichKey.register({
   name = 'Insert Mode',
   -- Pops out to insert mode and inserts line above.
-  ['<C-j>'] = { '<C-o>O', 'Insert Line, Move Above' }
+  ['<C-j>'] = { '<C-o>O', 'Insert Line, Move Above' },
+  ['<C-k>'] = { '<cmd> lua vim.lsp.buf.signature_help()<CR>', 'Signature Help' },
 }, { mode = 'i' })
 
 whichKey.register({
@@ -108,6 +109,8 @@ whichKey.register({
   K = { '<cmd>Telescope grep_string<CR>', 'Grep String Under Cursor' },
 
   ['<C-\\>'] = { ':b#<CR>', 'Last buffer' },
+  ['[d'] = { '<cmd>lua vim.diagnostic.goto_prev()<CR>', 'Previous By Definition' },
+  [']d'] = { '<cmd>lua vim.diagnostic.goto_next()<CR>', 'Next By Definition' },
 
   -- Window Navigation
   ['<C-j>'] = { '<C-W>j', 'Navigate Window Down' },
@@ -127,38 +130,39 @@ whichKey.register({
 
   l = {
     name = 'LSP',
-    d = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Goto Definition', },
+    c = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code actions', },
+
+    d = {
+      -- Diagnostic Open
+      o = { '<cmd>lua vim.diagnostic.open_float()<CR>', 'Open Diagnostic', },
+
+      -- Diagnostic Location List
+      l = { '<cmd>lua vim.diagnostic.setloclist()<CR>', 'Set Diagnostic Location List', },
+    },
+
     e = { '<cmd>lua vim.lsp.buf.declaration()<CR>', 'Goto Declaration', },
+    -- "Follow" References
+    f = { '<cmd>Telescope lsp_references<cr>', 'Goto References' },
+    -- "Goto" definition
+    g = { '<cmd>lua vim.lsp.buf.definition()<cr>', 'Goto Definition', },
     h = { '<cmd>lua vim.lsp.buf.hover()<CR>', 'Hover' },
     i = { '<cmd>lua vim.lsp.buf.implementation()<CR>', 'Goto Implementation', },
-    r = { '<cmd>Telescope lsp_references<cr>', 'Goto References' },
-    v = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename identifier' },
+    r = { '<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename identifier' },
+    t = { '<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type Definition' },
 
     s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'Signature Help' },
     wa = { '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add Workspace Folder', },
-    wl = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'Remove Workspace Folder', },
+    wl = { '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List Workspace Folders', },
     wr = { '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove Workspace Folder', },
 
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-
-
-  -- Implement
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  -- vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  -- vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  -- vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  -- Optional
   -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  --
+  -- I prefer Telescope lsp_references
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  --
+  -- Should happen on save
+  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   },
 
   m = {
@@ -190,13 +194,14 @@ whichKey.register({
     name = 'Search / Session',
 
     -- Search Commands
+    a = { '<cmd>Telescope<CR>', 'All Telescope Options' },
     b = { '<cmd>Telescope current_buffer_fuzzy_find<CR>', 'Fuzzy find in current buffer' },
-    b = { '<cmd>Telescope buffers<CR>', 'Fuzzy Buffer Search' },
+    c = { '<cmd>Telescope buffers<CR>', 'Fuzzy Buffer Search' },
     f = { '<cmd>Telescope find_files<CR>', 'Fuzzy File Search' },
     h = { '<cmd>Telescope help_tags<CR>', 'Fuzzy Help Tag Search' },
     p = { '<cmd>Telescope projects<CR>', 'Go To Recent Repo' },
+    r = { '<cmd>Telescope oldfiles<cr>', 'Recently opened files' },
     s = { '<cmd>Telescope live_grep<CR>', 'Grep in Project' },
-    a = { '<cmd>Telescope<CR>', 'All Telescope Options' },
     t = { '<cmd>Telescope treesitter<CR>', 'Find language tokens' },
 
     -- Session Commands

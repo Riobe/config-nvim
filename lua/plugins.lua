@@ -28,12 +28,12 @@ local packer = require('packer').startup(function(use)
   -- Heavily inspired by the original emacs-which-key and vim-which-key.
   --
   -- https://github.com/folke/which-key.nvim
-  use { "folke/which-key.nvim" }
+  use { 'folke/which-key.nvim' }
 
   -- Git source for hrsh7th/nvim-cmp
   --
   -- https://github.com/petertriho/cmp-git
-  use({"petertriho/cmp-git", requires = "nvim-lua/plenary.nvim"})
+  use({'petertriho/cmp-git', requires = 'nvim-lua/plenary.nvim'})
 
   -- A completion engine plugin for neovim written in Lua. Completion
   -- sources are installed from external repositories and "sourced".
@@ -42,31 +42,47 @@ local packer = require('packer').startup(function(use)
   use {
       'hrsh7th/nvim-cmp',
       requires = {
-          -- Snippet Engine for Neovim written in Lua
-          --
-          -- https://github.com/L3MON4D3/LuaSnip
-          'L3MON4D3/LuaSnip',
           -- nvim-cmp source for neovim's built-in language server client.
           --
           -- https://github.com/hrsh7th/cmp-nvim-lsp
           'hrsh7th/cmp-nvim-lsp',
+
           -- nvim-cmp source for buffer words.
           --
           -- https://github.com/hrsh7th/cmp-buffer
           'hrsh7th/cmp-buffer',
+
           -- nvim-cmp source for filesystem paths.
           --
           -- https://github.com/hrsh7th/cmp-path
-          'hrsh7th/cmp-path', 
+          'hrsh7th/cmp-path',
+
           -- nvim-cmp source for vim's cmdline.
           --
           -- https://github.com/hrsh7th/cmp-cmdline
           'hrsh7th/cmp-cmdline',
+
           -- nvim-cmp source for neovim Lua API.
           --
           -- https://github.com/hrsh7th/nvim-cmp
-          'hrsh7th/cmp-nvim-lua'
+          'hrsh7th/cmp-nvim-lua',
+
+          -- luasnip completion source for nvim-cmp
+          --
+          -- https://github.com/saadparwaiz1/cmp_luasnip
+          'saadparwaiz1/cmp_luasnip',
       }
+  }
+
+  -- Snippet Engine for Neovim written in Lua
+  --
+  -- https://github.com/L3MON4D3/LuaSnip
+  use {
+      'L3MON4D3/LuaSnip',
+      after = 'nvim-cmp',
+      config = function()
+        require('luasnip.loaders.from_vscode').lazy_load()
+      end
   }
 
   -- A glow preview directly in your neovim buffer.
@@ -84,7 +100,7 @@ local packer = require('packer').startup(function(use)
   -- it.
   --
   -- https://github.com/ellisonleao/glow.nvim
-  use {"ellisonleao/glow.nvim", branch = 'main'}
+  use {'ellisonleao/glow.nvim', branch = 'main'}
 
   -- The goal of nvim-treesitter is both to provide a simple and easy way
   -- to use the interface for tree-sitter in Neovim and to provide some
@@ -135,20 +151,20 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/startup-nvim/startup.nvim
   use {
-    "startup-nvim/startup.nvim",
-    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    'startup-nvim/startup.nvim',
+    requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
   }
 
   -- A neovim plugin to persist and toggle multiple terminals during an editing session
   --
   -- https://github.com/akinsho/toggleterm.nvim
-  use {"akinsho/toggleterm.nvim"}
+  use {'akinsho/toggleterm.nvim'}
 
   -- Disables relative line numbers when they don't make sense,
   -- e.g. when entering insert mode.
   --
   -- https://github.com/nkakouros-original/numbers.nvim
-  use "nkakouros-original/numbers.nvim"
+  use 'nkakouros-original/numbers.nvim'
 
   -- Smart and Powerful commenting plugin for Neovim
   --
@@ -200,14 +216,23 @@ local packer = require('packer').startup(function(use)
   --
   --https://github.com/jose-elias-alvarez/null-ls.nvim
   use 'jose-elias-alvarez/null-ls.nvim'
-end)
 
--- Automatically run :PackerCompile whenever plugins.lua is updated
-vim.cmd([[
-augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-]])
+  -- Friendly Snippets
+  -- Snippets collection for a set of different programming languages for faster development.
+  --
+  -- The only goal is to have one community driven repository for all kinds of snippets in all programming languages, this way you can have it all in one place.
+  --
+  -- https://github.com/rafamadriz/friendly-snippets
+  use 'rafamadriz/friendly-snippets'
+
+  -- A work-in-progress Magit clone for Neovim that is geared toward the Vim philosophy.
+  --
+  -- https://github.com/TimUntersberger/neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+
+  if packer_bootstrap then
+      require('packer').sync()
+  end
+end)
 
 return packer
