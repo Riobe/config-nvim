@@ -121,8 +121,8 @@ whichKey.register({
 
 whichKey.register({
   c = {
-    -- Uses the currently open file.
-    d = { '<cmd>cd %:p:h<cr>:pwd<CR>', 'Move PWD to Current Buffer' },
+    -- Uses the currently open file, and sets the current window's pwd to it's directory.
+    d = { '<cmd>lcd %:~:h<cr>:pwd<CR>', 'Set Window PWD to Current Buffer' },
   },
 
   -- Not a group, but I'm super used to this mapping.
@@ -198,10 +198,10 @@ whichKey.register({
     b = { '<cmd>Telescope current_buffer_fuzzy_find<CR>', 'Fuzzy find in current buffer' },
     c = { '<cmd>Telescope buffers<CR>', 'Fuzzy Buffer Search' },
     f = { '<cmd>Telescope find_files<CR>', 'Fuzzy File Search' },
+    g = { '<cmd>Telescope live_grep<CR>', 'Grep in Project' },
     h = { '<cmd>Telescope help_tags<CR>', 'Fuzzy Help Tag Search' },
     p = { '<cmd>Telescope projects<CR>', 'Go To Recent Repo' },
     r = { '<cmd>Telescope oldfiles<cr>', 'Recently opened files' },
-    s = { '<cmd>Telescope live_grep<CR>', 'Grep in Project' },
     t = { '<cmd>Telescope treesitter<CR>', 'Find language tokens' },
 
     -- Session Commands
