@@ -120,6 +120,8 @@ whichKey.register({
 })
 
 whichKey.register({
+  a = { '<cmd>A<CR>', 'Flip to alternate (spec) file' },
+
   c = {
     -- Uses the currently open file, and sets the current window's pwd to it's directory.
     d = { '<cmd>lcd %:~:h<cr>:pwd<CR>', 'Set Window PWD to Current Buffer' },
@@ -127,6 +129,8 @@ whichKey.register({
 
   -- Not a group, but I'm super used to this mapping.
   f = { '<cmd>NERDTreeFind<CR>', 'Current File in Explorer' },
+
+  g = { '<cmd>G<CR>', 'Open Git Fugitive' },
 
   l = {
     name = 'LSP',
@@ -190,6 +194,11 @@ whichKey.register({
     m = { '<cmd>Glow<CR>', 'Open Glow Markdown Preview' },
   },
 
+  -- Reload the file from disk. Handy when you changed things outside of vim.
+  -- Also sets the buffer as modifiable, in case that bugged out.
+  -- Think of it as "<leader> refresh"
+  r = { '<cmd>set ma<CR><cmd>e!<CR>', 'Refresh Buffer from Disk' },
+
   s = {
     name = 'Search / Session',
 
@@ -238,9 +247,12 @@ whichKey.register({
     c = { ':lua require("telescope").extensions.vstask.close()<CR>', 'Close' },
   },
 
+  -- Faster ways to save.
+  w = { '<cmd>update<CR>', "Save the file you're in" },
+  ['<leader>w'] = { '<cmd>wa<CR>', 'Save all files.' },
+
   y = {
     name = 'Toggle options',
-    r = { 'yor', 'Toggle Relative Line Numbers' },
     s = { '<cmd>setlocal spell!<CR>', 'Toggle Spell Check' },
   },
 }, { prefix = '<leader>', })

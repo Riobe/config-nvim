@@ -230,6 +230,11 @@ local packer = require('packer').startup(function(use)
   -- https://github.com/TimUntersberger/neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
+  -- A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
+  --
+  -- https://github.com/folke/trouble.nvim
+  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", }
+
   if packer_bootstrap then
       require('packer').sync()
   end

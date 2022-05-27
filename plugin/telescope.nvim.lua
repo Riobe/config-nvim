@@ -6,6 +6,10 @@ require('telescope').setup{
     selection_caret = "? ",
     path_display = { "truncate" },
 
+    layout_config = {
+      vertical = { width = 0.3 },
+    },
+
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,

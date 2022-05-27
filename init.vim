@@ -11,7 +11,6 @@
 
     " Git integration
     Plugin 'tpope/vim-fugitive'
-    nnoremap <leader>g :G<CR>
 
     " Lean & mean status/tabline for vim that's light as air
     Plugin 'bling/vim-airline'
@@ -171,7 +170,6 @@
 
     " Allow for alternating files.
     Plugin 'tpope/vim-projectionist'
-    nnoremap <leader>a :A<CR>
 
     " Make working with tabs easier.
     Plugin 'gcmt/taboo.vim'
@@ -235,23 +233,6 @@
     " botright (open next split in the bottom or right)
     " vsplit open vertical split.
     " nnoremap <leader>z :botright vsplit ~/.zshrc<CR>
-
-    " Make Ctrl-\ switch to the last open file.
-    nnoremap <c-\> :b#<CR>
-
-    " Faster way to save.
-    " Save the file you're in.
-    nnoremap <leader>w :update<CR>
-    " Save all files.
-    nnoremap <leader><leader>w :wa<CR>
-
-    " Reload the file from disk. Handy when you changed things out with
-    " source control (for instance). Think of it as "<leader> edit"
-    nnoremap <leader>e :e!<CR>
-
-    " Fix to handle bug I'm only seeing on Mac so far with a buffer going
-    " unmodifiable. I'm thinking of this one as <leader>r(eload)
-    nnoremap <leader>r :set ma<CR>:e!<CR>
 
     " Allow for saving as sudo.
     cnoremap w!! w !sudo tee > /dev/null %
