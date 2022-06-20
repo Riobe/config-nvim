@@ -78,9 +78,16 @@ local defaultOptions = {
 
 whichKey.register({
   name = 'Insert Mode',
+
   -- Pops out to insert mode and inserts line above.
   ['<C-j>'] = { '<C-o>O', 'Insert Line, Move Above' },
   ['<C-k>'] = { '<cmd> lua vim.lsp.buf.signature_help()<CR>', 'Signature Help' },
+
+  -- To move left and right
+  ['<C-l>'] = { '<C-o>l', 'Move to the right in insert mode.' },
+  ['<C-h>'] = { '<C-o>h', 'Move to the left in insert mode.' },
+
+  ['<C-f>'] = { 'copilot#Accept("<CR>")', 'Autocomplete from copilot' },
 }, { mode = 'i' })
 
 whichKey.register({
@@ -207,6 +214,7 @@ whichKey.register({
     b = { '<cmd>Telescope current_buffer_fuzzy_find<CR>', 'Fuzzy find in current buffer' },
     c = { '<cmd>Telescope buffers<CR>', 'Fuzzy Buffer Search' },
     f = { '<cmd>Telescope find_files<CR>', 'Fuzzy File Search' },
+    e = { '<cmd>lua require("telescope.builtin").live_grep({grep_open_files=true})', 'Grep open buffers' },
     g = { '<cmd>Telescope live_grep<CR>', 'Grep in Project' },
     h = { '<cmd>Telescope help_tags<CR>', 'Fuzzy Help Tag Search' },
     p = { '<cmd>Telescope projects<CR>', 'Go To Recent Repo' },

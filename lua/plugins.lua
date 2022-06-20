@@ -164,7 +164,7 @@ local packer = require('packer').startup(function(use)
   -- e.g. when entering insert mode.
   --
   -- https://github.com/nkakouros-original/numbers.nvim
-  use 'nkakouros-original/numbers.nvim'
+  -- use 'nkakouros-original/numbers.nvim'
 
   -- Smart and Powerful commenting plugin for Neovim
   --
@@ -234,6 +234,20 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/folke/trouble.nvim
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", }
+
+  -- It sets vim.ui.select to telescope. That means for example that neovim core stuff can fill the telescope picker. Example would be lua vim.lsp.buf.code_action().
+  --
+  -- https://github.com/nvim-telescope/telescope-ui-select.nvim
+  use {'nvim-telescope/telescope-ui-select.nvim' }
+
+  -- GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. GitHub Copilot is powered by the OpenAI Codex AI system, trained on public Internet text and billions of lines of code.
+  --
+  -- Copilot.vim is a Vim plugin for GitHub Copilot. For now, it requires Neovim 0.6 (for virtual lines support) and a Node.js installation.
+  --
+  -- To learn more about GitHub Copilot, visit https://copilot.github.com.
+  --
+  -- https://github.com/github/copilot.vim#technical-preview
+  use { 'github/copilot.vim' }
 
   if packer_bootstrap then
       require('packer').sync()
