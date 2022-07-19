@@ -20,14 +20,14 @@ require("toggleterm").setup{
     -- highlights which map to a highlight group name and a table of it's values
     -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
     Normal = {
-      -- guibg = <VALUE-HERE>,
+      -- guibg = 0,
     },
     NormalFloat = {
       link = 'Normal'
     },
     FloatBorder = {
-      -- guifg = <VALUE-HERE>,
-      -- guibg = <VALUE-HERE>,
+      -- guifg = 0,
+      -- guibg = 0,
     },
   },
   shade_terminals = true,
@@ -47,10 +47,10 @@ require("toggleterm").setup{
     -- the 'curved' border is a custom border type
     -- not natively supported but implemented in this plugin.
     -- border = 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-    border = 'shadow',
+    border = 'curved',
     -- width = <value>,
     -- height = <value>,
-    winblend = 3,
+    winblend = 0,
   }
 }
 
