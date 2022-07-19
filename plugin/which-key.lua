@@ -201,6 +201,8 @@ whichKey.register({
     m = { '<cmd>Glow<CR>', 'Open Glow Markdown Preview' },
   },
 
+  q = { '<cmd>qa<CR>', 'Quit vim' },
+
   -- Reload the file from disk. Handy when you changed things outside of vim.
   -- Also sets the buffer as modifiable, in case that bugged out.
   -- Think of it as "<leader> refresh"
