@@ -57,7 +57,8 @@ require("toggleterm").setup{
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }
   -- Since <C-[> maps to <esc>, this works for both.
-  vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.api.nvim_buf_set_keymap(0, "t", "<C-]>", [[<C-\><C-n>]], opts)
 
   -- Window management. Ctrl + Vim Direction leaves term
   vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
