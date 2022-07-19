@@ -266,3 +266,10 @@ whichKey.register({
     s = { '<cmd>setlocal spell!<CR>', 'Toggle Spell Check' },
   },
 }, { prefix = '<leader>', })
+
+whichKey.register({
+  t = {
+    n = { '<cmd>tabnew<CR>', "Create new tab" },
+    c = { '<cmd>tabclose<CR>', "Close tab" },
+  },
+}, { prefix = '<leader><leader>', });
