@@ -409,6 +409,13 @@ local packer = require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     tag = 'release' -- To use the latest release
   }
+
+  -- Show function signature when you type
+  --
+  -- https://github.com/ray-x/lsp_signature.nvim
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
 end)
 
 return packer
