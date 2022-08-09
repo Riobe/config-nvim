@@ -318,8 +318,14 @@ local packer = require('packer').startup(function(use)
   use {
     'akinsho/bufferline.nvim',
     tag = "v2.*",
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
   }
+
+  -- Changing the way of how to use tabs on neovim. This plugin scopes buffers to tabs cleaning up tabline plugins like bufferline.nvim.
+  -- Buffers belong to tabs, allowing a scoped use of :bnext and :bprev.
+  --
+  -- https://github.com/tiagovla/scope.nvim
+  use "tiagovla/scope.nvim"
 end)
 
 return packer
