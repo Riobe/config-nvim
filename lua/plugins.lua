@@ -254,11 +254,20 @@ local packer = require('packer').startup(function(use)
   -- Quickly get to back/next or toggling on pairs of commands.
   use {'tpope/vim-unimpaired'}
 
-  -- GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. GitHub Copilot is powered by the OpenAI Codex AI system, trained on public Internet text and billions of lines of code.
+  -- A snazzy buffer line (with tabpage integration) for Neovim built using lua.
   --
   -- https://github.com/akinsho/bufferline.nvim
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  -- use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
+  -- A Neovim bufferline for people with addictive personalities
+  -- The goal of this plugin is not to be an opinionated bufferline with (more or less) limited customization options. Rather,
+  -- it tries to provide a general framework allowing you to build your ideal bufferline, whatever that might look like.
+  --
+  -- https://github.com/noib3/nvim-cokeline
+  use({
+    'noib3/nvim-cokeline',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }, -- If you want devicons
+  })
   -- A blazing fast and easy to configure Neovim statusline written in Lua.
   --
   -- https://github.com/nvim-lualine/lualine.nvim
