@@ -256,12 +256,8 @@ local packer = require('packer').startup(function(use)
 
   -- GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. GitHub Copilot is powered by the OpenAI Codex AI system, trained on public Internet text and billions of lines of code.
   --
-  -- Copilot.vim is a Vim plugin for GitHub Copilot. For now, it requires Neovim 0.6 (for virtual lines support) and a Node.js installation.
-  --
-  -- To learn more about GitHub Copilot, visit https://copilot.github.com.
-  --
-  -- https://github.com/github/copilot.vim#technical-preview
-  use { 'github/copilot.vim' }
+  -- https://github.com/akinsho/bufferline.nvim
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   if packer_bootstrap then
       require('packer').sync()
