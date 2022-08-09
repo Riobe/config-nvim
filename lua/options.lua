@@ -1,5 +1,7 @@
+local option = vim.api.nvim_set_option
+
 -- When doing vertical splits, create new window pane on the right.
-vim.api.nvim_set_option('splitright', true)
+option('splitright', true)
 
 vim.cmd([=[
 " If set to 1 then the CWD is changed when the NERD tree is first loaded to the
