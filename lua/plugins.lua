@@ -15,6 +15,10 @@ end
 
 -- Load packer plugins on startup.
 local packer = require('packer').startup(function(use)
+  if packer_bootstrap then
+      require('packer').sync()
+  end
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -89,7 +93,7 @@ local packer = require('packer').startup(function(use)
   --
   -- Glow description: Render markdown on the CLI, with pizzazz!
   -- Glow is a terminal based markdown reader designed from the ground
-  -- up to bring out the beauty�and power�of the CLI.
+  -- up to bring out the beauty¿and power¿of the CLI.
   --
   -- Use it to discover markdown files, read documentation directly on
   -- the command line and stash markdown files to your own private collection
@@ -257,11 +261,97 @@ local packer = require('packer').startup(function(use)
   -- A snazzy buffer line (with tabpage integration) for Neovim built using lua.
   --
   -- https://github.com/akinsho/bufferline.nvim
-  use {
-    'akinsho/bufferline.nvim',
-    tag = "v2.*",
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }, -- If you want devicons
-  }
+ --  print('Using bufferline')
+ --  use {
+ --    'akinsho/bufferline.nvim',
+ --    tag = "v2.*",
+ --    requires = { 'kyazdani42/nvim-web-devicons', opt = true }, -- If you want devicons
+ --
+ --    config = function()
+ --      print('Bufferline config')
+	-- local bufferline_config = {
+	--     options = {
+	-- 	mode = "buffers", -- can also be set to "tabs" to see tabpages
+	-- 	-- themable = false, -- whether or not the highlights for this plugin can be overriden.
+ --
+	-- 	numbers = "both", --"none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+	-- 	--- @deprecated, please specify numbers as a function to customize the styling
+	-- 	-- number_style = "superscript" | "" | { "none", "subscript" }, -- buffer_id at index 1, ordinal at index 2
+	-- 	-- mappings = false,
+ --
+	-- 	close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
+	-- 	right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+	-- 	left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+	-- 	middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
+ --
+	-- 	-- indicator_icon = '|',
+	-- 	buffer_close_icon= "",
+	-- 	modified_icon = "●",
+	-- 	close_icon = "",
+	-- 	left_trunc_marker = "",
+	-- 	right_trunc_marker = "",
+ --
+	-- 	--- name_formatter can be used to change the buffer's label in the bufferline.
+	-- 	--- Please note some names can/will break the
+	-- 	--- bufferline so use this at your discretion knowing that it has
+	-- 	--- some limitations that will NOT be fixed.
+	-- 	-- name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
+	-- 	  -- remove extension from markdown files for example
+	-- 	  -- if buf.name:match('%.md') then
+	-- 	  --   return vim.fn.fnamemodify(buf.name, ':t:r')
+	-- 	  -- end
+	-- 	-- end,
+ --
+	-- 	max_name_length = 18,
+	-- 	max_prefix_length = 15, -- prefix used when a buffer is deduplicated
+	-- 	tab_size = 18,
+	-- 	diagnostics = false, --false | "nvim_lsp" | "coc"
+	-- 	-- diagnostics_update_in_insert = false,
+	-- 	diagnostics_indicator = function(count, level)
+	-- 	  return "("..count..")"
+	-- 	end,
+ --
+	-- 	-- groups = {}, -- see :h bufferline-groups for details
+ --
+	-- 	color_icons = true,
+	-- 	show_buffer_icons = false,
+	-- 	show_buffer_close_icons = false,
+	-- 	show_buffer_default_icon = false, -- whether or not an unrecognised filetype should show a default icon
+	-- 	show_close_icon = false,
+	-- 	show_tab_indicators = false,
+	-- 	persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+ --
+	-- 	-- can also be a table containing 2 custom separators
+	-- 	-- [focused and unfocused]. eg: { "|", "|" }
+	-- 	separator_style = "slant", --"slant" | "padded_slant" | "thick" | "thin" | { "any", "any" },
+	-- 	enforce_regular_tabs = true,
+	-- 	always_show_bufferline = true,
+ --
+	-- 	-- offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center" | "right" | "left"}},
+ --
+	-- 	sort_by = "id", --"id" | "extension" | "relative_directory" | "directory" | "tabs" | function(buffer_a, buffer_b)
+	-- 	-- add custom logic
+	-- 	--     return buffer_a.modified > buffer_b.modified
+	-- 	-- end
+	--     }
+	-- }
+ --
+	--   print('Setting up bufferline in bufferline.lua')
+ --
+	--   vim.opt.termguicolors = true
+	--   local bufferline = require("bufferline")
+	--   bufferline.setup(bufferline_config)
+	--   print(bufferline)
+	--   print(bufferline.setup)
+ --
+	--   print('After setting up bufferline in bufferline.lua')
+ --      print('Bufferline config complete - 2')
+ --    end,
+ --
+ --    setup = function()
+ --      print('Bufferline setup')
+ --    end,
+ --  }
 
   -- A Neovim bufferline for people with addictive personalities
   -- The goal of this plugin is not to be an opinionated bufferline with (more or less) limited customization options. Rather,
@@ -273,6 +363,15 @@ local packer = require('packer').startup(function(use)
   --   requires = { 'kyazdani42/nvim-web-devicons', opt = true }, -- If you want devicons
   -- })
 
+  -- barbar.nvim is a tabline plugin with re-orderable, auto-sizing, clickable tabs, icons, nice highlighting, sort-by commands and
+  -- a magic jump-to-buffer mode. Plus the tab names are made unique when two filenames match.
+  --
+  -- https://github.com/romgrk/barbar.nvim
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
   -- A blazing fast and easy to configure Neovim statusline written in Lua.
   --
   -- https://github.com/nvim-lualine/lualine.nvim
@@ -281,9 +380,26 @@ local packer = require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  if packer_bootstrap then
-      require('packer').sync()
-  end
+  -- File explorer
+  use 'scrooloose/nerdtree'
+
+  -- Git status in nerdtree
+  use 'Xuyuanp/nerdtree-git-plugin'
+
+  -- Working with variants of a word.
+  use 'tpope/vim-abolish'
+
+  -- So many colorschemes available!
+  use 'flazz/vim-colorschemes'
+
+  -- Allow for alternating files.
+  use 'tpope/vim-projectionist'
+
+  -- Make working with tabs easier.
+  use 'gcmt/taboo.vim'
+
+  -- Make working with sessions easier.
+  use 'tpope/vim-obsession'
 end)
 
 return packer

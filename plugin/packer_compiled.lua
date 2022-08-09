@@ -82,6 +82,11 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/opt/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -127,15 +132,30 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["marks.nvim"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/marks.nvim",
-    url = "https://github.com/chentau/marks.nvim"
+    url = "https://github.com/chentoast/marks.nvim"
   },
   neogit = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/scrooloose/nerdtree"
+  },
+  ["nerdtree-git-plugin"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
+    url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -197,6 +217,16 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/startup.nvim",
     url = "https://github.com/startup-nvim/startup.nvim"
   },
+  ["taboo.vim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/taboo.vim",
+    url = "https://github.com/gcmt/taboo.vim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -207,10 +237,50 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
+  ["vim-abolish"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-abolish",
+    url = "https://github.com/tpope/vim-abolish"
+  },
   ["vim-code-dark"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
+  },
+  ["vim-colorschemes"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-colorschemes",
+    url = "https://github.com/flazz/vim-colorschemes"
+  },
+  ["vim-obsession"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-obsession",
+    url = "https://github.com/tpope/vim-obsession"
+  },
+  ["vim-projectionist"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-projectionist",
+    url = "https://github.com/tpope/vim-projectionist"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
   },
   ["vs-tasks.nvim"] = {
     loaded = true,

@@ -53,7 +53,7 @@ end
 
 _G.load_snippets = function()
   vim.cmd('echomsg "Loading snippets"')
-  require("luasnip.loaders.from_vscode").load()
+  -- require("luasnip.loaders.from_vscode").load()
 end
 
 -- vim.cmd([[

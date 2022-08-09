@@ -272,4 +272,6 @@ whichKey.register({
     n = { '<cmd>tabnew<CR>', "Create new tab" },
     c = { '<cmd>tabclose<CR>', "Close tab" },
   },
+
+  s = { '<cmd>source %<CR>', 'Source current file' },
 }, { prefix = '<leader><leader>', });
