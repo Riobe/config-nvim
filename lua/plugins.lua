@@ -262,10 +262,10 @@ local packer = require('packer').startup(function(use)
   -- a magic jump-to-buffer mode. Plus the tab names are made unique when two filenames match.
   --
   -- https://github.com/romgrk/barbar.nvim
-  use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
+  -- use {
+  --   'romgrk/barbar.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons'}
+  -- }
 
   -- A blazing fast and easy to configure Neovim statusline written in Lua.
   --
@@ -312,8 +312,13 @@ local packer = require('packer').startup(function(use)
     "ray-x/lsp_signature.nvim",
   }
 
+  -- A snazzy ?? buffer line (with tabpage integration) for Neovim built using lua.
+  --
+  -- https://github.com/akinsho/bufferline.nvim
   use {
-    "axkirillov/telescope-changed-files"
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons'
   }
 end)
 

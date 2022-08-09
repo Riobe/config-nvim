@@ -422,4 +422,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " }
 
 set list listchars=trail:⎵
+
+exec "source" . fnamemodify($MYVIMRC, ':h') . '/plugin/bufferline.lua'
 ]=])
