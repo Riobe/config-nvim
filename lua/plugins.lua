@@ -259,6 +259,14 @@ local packer = require('packer').startup(function(use)
   -- https://github.com/akinsho/bufferline.nvim
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 
+  -- A blazing fast and easy to configure Neovim statusline written in Lua.
+  --
+  -- https://github.com/nvim-lualine/lualine.nvim
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
   if packer_bootstrap then
       require('packer').sync()
   end

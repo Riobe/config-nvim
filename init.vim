@@ -13,11 +13,11 @@
     Plugin 'tpope/vim-fugitive'
 
     " Lean & mean status/tabline for vim that's light as air
-    Plugin 'bling/vim-airline'
+    " Plugin 'bling/vim-airline'
 
     " Automatically displays all buffers when there's only one tab open.
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#ale#enabled = 1
+    " let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#ale#enabled = 1
 
     " Toggle line numbering mode on focus and insert mode
     "Plugin 'jeffkreeftmeijer/vim-numbertoggle'
