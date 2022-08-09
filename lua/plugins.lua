@@ -240,6 +240,20 @@ local packer = require('packer').startup(function(use)
   -- https://github.com/nvim-telescope/telescope-ui-select.nvim
   use {'nvim-telescope/telescope-ui-select.nvim' }
 
+  -- Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
+  --
+  -- https://github.com/tpope/vim-surround
+  use {'tpope/vim-surround'}
+
+  -- If you've ever tried using the . command after a plugin map, you were likely disappointed to discover it only repeated the last native command inside that map,
+  -- rather than the map as a whole. That disappointment ends today. Repeat.vim remaps . in a way that plugins can tap into it.
+  --
+  -- https://github.com/tpope/vim-repeat
+  use {'tpope/vim-repeat' }
+
+  -- Quickly get to back/next or toggling on pairs of commands.
+  use {'tpope/vim-unimpaired'}
+
   -- GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. GitHub Copilot is powered by the OpenAI Codex AI system, trained on public Internet text and billions of lines of code.
   --
   -- Copilot.vim is a Vim plugin for GitHub Copilot. For now, it requires Neovim 0.6 (for virtual lines support) and a Node.js installation.

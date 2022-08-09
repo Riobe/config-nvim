@@ -70,17 +70,8 @@
     " Git status in nerdtree
     Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-    " Be able to change/add/delete surround characters/tags
-    Plugin 'tpope/vim-surround'
-
     " Working with variants of a word.
     Plugin 'tpope/vim-abolish'
-
-    " Enhance the . command to work on plugin maps.
-    Plugin 'tpope/vim-repeat'
-
-    " Quickly get to back/next or toggling on pairs of commands.
-    Plugin 'tpope/vim-unimpaired'
 
     " " Quickly navigate
     " Plugin 'easymotion/vim-easymotion'
