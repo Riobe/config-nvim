@@ -124,7 +124,7 @@ local packer = require('packer').startup(function(use)
   -- A better user experience for interacting with and manipulating Vim marks.
   --
   -- https://github.com/chentau/marks.nvim
-  use 'chentau/marks.nvim'
+  use 'chentoast/marks.nvim'
 
   -- A File Explorer For Neovim Written In Lua
   --
