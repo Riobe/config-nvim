@@ -164,7 +164,7 @@ local packer = require('packer').startup(function(use)
   -- e.g. when entering insert mode.
   --
   -- https://github.com/nkakouros-original/numbers.nvim
-  -- use 'nkakouros-original/numbers.nvim'
+  use 'nkakouros-original/numbers.nvim'
 
   -- Smart and Powerful commenting plugin for Neovim
   --
