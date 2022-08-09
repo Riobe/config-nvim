@@ -400,6 +400,15 @@ local packer = require('packer').startup(function(use)
 
   -- Make working with sessions easier.
   use 'tpope/vim-obsession'
+
+
+  -- Super fast git decorations implemented purely in lua/teal.
+  --
+  -- https://github.com/lewis6991/gitsigns.nvim
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release' -- To use the latest release
+  }
 end)
 
 return packer
