@@ -10,7 +10,7 @@
     Plugin 'gmarik/Vundle.vim'
 
     " Git integration
-    Plugin 'tpope/vim-fugitive'
+    " Plugin 'tpope/vim-fugitive'
 
     " Lean & mean status/tabline for vim that's light as air
     " Plugin 'bling/vim-airline'

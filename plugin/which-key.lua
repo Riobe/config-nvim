@@ -137,7 +137,7 @@ whichKey.register({
   -- Not a group, but I'm super used to this mapping.
   f = { '<cmd>NERDTreeFind<CR>', 'Current File in Explorer' },
 
-  g = { '<cmd>G<CR>', 'Open Git Fugitive' },
+  -- g = { '<cmd>G<CR>', 'Open Git Fugitive' },
 
   l = {
     name = 'LSP',
