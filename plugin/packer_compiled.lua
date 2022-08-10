@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     config = { "\27LJ\2\nM\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0" },
     load_after = {},
@@ -182,6 +187,11 @@ _G.packer_plugins = {
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -221,6 +231,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/quick-scope",
     url = "https://github.com/unblevable/quick-scope"
+  },
+  ["scope.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/scope.nvim",
+    url = "https://github.com/tiagovla/scope.nvim"
   },
   ["startup.nvim"] = {
     loaded = true,
