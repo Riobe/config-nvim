@@ -326,6 +326,16 @@ local packer = require('packer').startup(function(use)
   --
   -- https://github.com/tiagovla/scope.nvim
   use "tiagovla/scope.nvim"
+
+  -- The plugin shows a lightbulb in the sign column whenever a textDocument/codeAction is available at the current cursor position.
+  -- This makes code actions both discoverable and efficient, as code actions can be available even when there are no visible diagnostics (warning, information, hints etc.).
+  --
+  -- https://github.com/kosayoda/nvim-lightbulb
+  use {
+      'kosayoda/nvim-lightbulb',
+      requires = 'antoinemadec/FixCursorHold.nvim',
+  }
+
 end)
 
 return packer
