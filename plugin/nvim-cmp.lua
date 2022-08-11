@@ -16,10 +16,13 @@ vim.cmd('set completeopt=menu,menuone,noselect')
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
+if cmp == nil then
+  return
+end
 
 cmp.setup({
   snippet = {
@@ -36,7 +39,7 @@ cmp.setup({
     documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
-    ["<Tab>"] = cmp.mapping(function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
       local luasnip = require('luasnip')
       if cmp.visible() then
         cmp.select_next_item()
@@ -47,9 +50,9 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { 'i', 's' }),
 
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
       local luasnip = require('luasnip')
       if cmp.visible() then
         cmp.select_prev_item()
@@ -58,10 +61,10 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { 'i', 's' }),
 
     -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
     -- ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -80,7 +83,7 @@ cmp.setup({
     -- { name = 'snippy' }, -- For snippy users.
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Set configuration for specific filetype.
@@ -89,30 +92,30 @@ cmp.setup.filetype('gitcommit', {
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
-    { name = 'cmdline' }
-  })
+    { name = 'cmdline' },
+  }),
 })
 
 -- Setup lspconfig.
 -- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-  --   capabilities = capabilities
-  -- }
+--   capabilities = capabilities
+-- }

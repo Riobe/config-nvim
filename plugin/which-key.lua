@@ -67,14 +67,14 @@ whichKey.setup {
   },
 }
 
-local defaultOptions = {
-  mode = 'n', -- NORMAL mode
-  prefix = '',  -- No prefix
-  buffer = nil, -- Global mappings. Specify a buffer Gumber for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
-}
+-- defaultOptions = {
+--   mode = 'n', -- NORMAL mode
+--   prefix = '',  -- No prefix
+--   buffer = nil, -- Global mappings. Specify a buffer Gumber for buffer local mappings
+--   silent = true, -- use `silent` when creating keymaps
+--   noremap = true, -- use `noremap` when creating keymaps
+--   nowait = false, -- use `nowait` when creating keymaps
+-- }
 
 whichKey.register({
   name = 'Insert Mode',
