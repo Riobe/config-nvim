@@ -178,7 +178,7 @@ whichKey.register({
 
   m = {
     name = 'Monstrous/Misc Commands',
-    b = {"<cmd>exec 'source' . fnamemodify($MYVIMRC, ':h') . '/plugin/bufferline.lua'<CR>", 'Load bufferline'},
+    b = {"<cmd>exec 'source ' . fnamemodify($MYVIMRC, ':h') . '/plugin/bufferline.lua'<CR>", 'Load bufferline'},
 
     -- I've had vim set a file as unmodifiable and it just needs reopened.
     -- I have no idea why, but this technique will make it modifiable again.
