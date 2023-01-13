@@ -333,12 +333,15 @@ local packer = require('packer').startup(function(use)
           -- NOTE: this plugin is designed with this icon in mind,
           -- and so changing this is NOT recommended, this is intended
           -- as an escape hatch for people who cannot bear it for whatever reason
-          indicator_icon = '|',
-          buffer_close_icon = '',
+          indicator = {
+            icon = "|",
+            style = "icon",
+          },
+          buffer_close_icon = 'x',
           modified_icon = '●',
-          close_icon = '',
-          left_trunc_marker = '',
-          right_trunc_marker = '',
+          close_icon = 'x',
+          left_trunc_marker = '<',
+          right_trunc_marker = '>',
 
           --- name_formatter can be used to change the buffer's label in the bufferline.
           --- Please note some names can/will break the
