@@ -300,10 +300,10 @@ local packer = require('packer').startup(function(use)
   -- Super fast git decorations implemented purely in lua/teal.
   --
   -- https://github.com/lewis6991/gitsigns.nvim
-  use {
-    'lewis6991/gitsigns.nvim',
-    tag = 'release' -- To use the latest release
-  }
+  -- use {
+  --   'lewis6991/gitsigns.nvim',
+  --   tag = 'release' -- To use the latest release
+  -- }
 
   -- Show function signature when you type
   --
