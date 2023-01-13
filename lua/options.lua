@@ -419,6 +419,8 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
   exec 'nnoremap <Leader>sp :Obsession<CR>'
 
   set sessionoptions+=tabpages,globals
+
+  set mouse=
 " }
 
 set list listchars=trail:⎵
