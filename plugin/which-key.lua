@@ -67,14 +67,14 @@ whichKey.setup {
   },
 }
 
-local defaultOptions = {
-  mode = 'n', -- NORMAL mode
-  prefix = '',  -- No prefix
-  buffer = nil, -- Global mappings. Specify a buffer Gumber for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = false, -- use `nowait` when creating keymaps
-}
+-- defaultOptions = {
+--   mode = 'n', -- NORMAL mode
+--   prefix = '',  -- No prefix
+--   buffer = nil, -- Global mappings. Specify a buffer Gumber for buffer local mappings
+--   silent = true, -- use `silent` when creating keymaps
+--   noremap = true, -- use `noremap` when creating keymaps
+--   nowait = false, -- use `nowait` when creating keymaps
+-- }
 
 whichKey.register({
   name = 'Insert Mode',
@@ -178,7 +178,7 @@ whichKey.register({
 
   m = {
     name = 'Monstrous/Misc Commands',
-    b = {"<cmd>exec 'source' . fnamemodify($MYVIMRC, ':h') . '/plugin/bufferline.lua'<CR>", 'Load bufferline'},
+    b = {"<cmd>exec 'source ' . fnamemodify($MYVIMRC, ':h') . '/plugin/bufferline.lua'<CR>", 'Load bufferline'},
 
     -- I've had vim set a file as unmodifiable and it just needs reopened.
     -- I have no idea why, but this technique will make it modifiable again.

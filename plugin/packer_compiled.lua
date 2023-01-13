@@ -62,7 +62,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
+  local success, result = pcall(load(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/riobe/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     config = { "\27LJ\2\nM\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14lazy_load luasnip.loaders.from_vscode\frequire\0" },
     load_after = {},
@@ -88,6 +93,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["bufferline.nvim"] = {
+    config = { "\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(�\5\1\0\5\0\r\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\v\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\3=\3\f\2B\0\2\1K\0\1\0\foptions\1\0\0\26diagnostics_indicator\0\19name_formatter\0\1\0\27\tmode\fbuffers\23right_trunc_marker\b\22show_buffer_icons\2\22left_trunc_marker\b\28show_buffer_close_icons\1\15close_icon\b\20show_close_icon\1\18modified_icon\b●\27always_show_bufferline\2\22buffer_close_icon\b\19indicator_icon\6|\20separator_style\nslant\24persist_buffer_sort\2\23left_mouse_command\14buffer %d\24right_mouse_command\16bdelete! %d\29show_buffer_default_icon\2\18close_command\16bdelete! %d\fnumbers\tboth\16color_icons\2\25enforce_regular_tabs\1\24show_tab_indicators\2\fsort_by\25insert_after_current!diagnostics_update_in_insert\1\16diagnostics\1\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0" },
     loaded = true,
     path = "/home/riobe/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -182,6 +188,11 @@ _G.packer_plugins = {
     path = "/home/riobe/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/riobe/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -221,6 +232,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/riobe/.local/share/nvim/site/pack/packer/start/quick-scope",
     url = "https://github.com/unblevable/quick-scope"
+  },
+  ["scope.nvim"] = {
+    loaded = true,
+    path = "/Users/jpridemore/.local/share/nvim/site/pack/packer/start/scope.nvim",
+    url = "https://github.com/tiagovla/scope.nvim"
   },
   ["startup.nvim"] = {
     loaded = true,
@@ -305,6 +321,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\1\1\0\0\0\1K\0\1\0\31\0\4\a\0\2\0\5'\4\0\0\18\5\0\0'\6\1\0&\4\6\4L\4\2\0\6)\6(�\5\1\0\5\0\r\0\0176\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\v\0005\3\6\0003\4\a\0=\4\b\0033\4\t\0=\4\n\3=\3\f\2B\0\2\1K\0\1\0\foptions\1\0\0\26diagnostics_indicator\0\19name_formatter\0\1\0\27\tmode\fbuffers\23right_trunc_marker\b\22show_buffer_icons\2\22left_trunc_marker\b\28show_buffer_close_icons\1\15close_icon\b\20show_close_icon\1\18modified_icon\b●\27always_show_bufferline\2\22buffer_close_icon\b\19indicator_icon\6|\20separator_style\nslant\24persist_buffer_sort\2\23left_mouse_command\14buffer %d\24right_mouse_command\16bdelete! %d\29show_buffer_default_icon\2\18close_command\16bdelete! %d\fnumbers\tboth\16color_icons\2\25enforce_regular_tabs\1\24show_tab_indicators\2\fsort_by\25insert_after_current!diagnostics_update_in_insert\1\16diagnostics\1\rtab_size\3\18\22max_prefix_length\3\15\20max_name_length\3\18\nsetup\15bufferline\frequire\18termguicolors\bopt\bvim\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]

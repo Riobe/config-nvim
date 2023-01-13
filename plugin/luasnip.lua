@@ -1,24 +1,26 @@
-local function prequire(...)
-local status, lib = pcall(require, ...)
-if (status) then return lib end
-    return nil
-end
+-- local function prequire(...)
+--   local status, lib = pcall(require, ...)
+--   if status then
+--     return lib
+--   end
+--   return nil
+-- end
 
-local luasnip = prequire('luasnip')
-local cmp = prequire("cmp")
+-- local luasnip = prequire('luasnip')
+-- local cmp = prequire('cmp')
+--
+-- local t = function(str)
+--   return vim.api.nvim_replace_termcodes(str, true, true, true)
+-- end
 
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-        return true
-    else
-        return false
-    end
-end
+-- local check_back_space = function()
+--   local col = vim.fn.col('.') - 1
+--   if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+--     return true
+--   else
+--     return false
+--   end
+-- end
 
 -- _G.tab_complete = function()
 --     if cmp and cmp.visible() then
