@@ -8,6 +8,8 @@ return {
     { "<C-s>", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
     { "<C-c>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
     { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
+    -- I'm switching to treesitter symbols, so I'm unmapping the default
+    { "<leader>ss", false },
   },
   opts = {
     defaults = {

@@ -1,9 +1,10 @@
 return {
-  -- Configure LazyVim to load gruvbox
+  -- Configure LazyVim to load evening
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "evening",
+      colorscheme = { "evening" },
+      -- use('tomasiser/vim-code-dark')
     },
   },
 }
