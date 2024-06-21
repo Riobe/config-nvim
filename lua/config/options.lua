@@ -141,6 +141,7 @@ opt.wildmode = "longest,full" -- Command-line completion mode | Default "longest
 -- When 'wildmode' is used, "wildmenu" mode is used where "full" is
 -- specified.  "longest" and "list" do not start "wildmenu" mode.
 opt.wildmenu = true
+
 -- opt.winminwidth = 5 -- Minimum window width
 opt.wrap = true -- Disable line wrap
 
