@@ -98,6 +98,11 @@ map("n", "<C-m>", "<cmd>Telescope lsp_references<cr>", { desc = "Goto References
 map("n", "<C-t>", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
 map("n", "<leader>ct", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Type Definition" })
 
+-- # Git
+map("n", "<leader>dm", "<cmd>DiffviewOpen origin/main...HEAD<cr>", { desc = "Diff with Main" })
+map("n", "<leader>dh", "<cmd>DiffviewFileHistory<cr>", { desc = "File History" })
+map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close Diff" })
+
 -- # Terminal
 map("n", "<leader>tt", "<cmd>terminal<cr>i", { desc = "Terminal" })
 
