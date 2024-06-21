@@ -93,10 +93,6 @@ unmap("n", "L") -- Default: "<cmd>BufferLineCycleNext<cr>", { desc = "Move to th
 unmap("n", "gco") -- Default: "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Below" }
 unmap("n", "gcO") -- Default: "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" }
 
--- # Lazy
-unmap("n", "<leader>l")
-map("n", "<leader>fl", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
 -- # LSP
 map("n", "<C-m>", "<cmd>Telescope lsp_references<cr>", { desc = "Goto References" })
 map("n", "<C-t>", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
@@ -113,3 +109,6 @@ map("n", "<leader>vc", "<cmd>lua require('telescope').extensions.vstask.close()<
 -- # Open
 map("n", "<leader>fB", ":e ~/.bashrc<CR>", { desc = "Open .bashrc" })
 map("n", "<leader>A", "<cmd>A<cr>", { desc = "Flip to alternate (spec) file" })
+
+-- # Copy
+map("n", "<leader>yf", "<cmd>call setreg('+' , expand('%'))<CR>", { desc = "Copy Filename to Clipboard" })
