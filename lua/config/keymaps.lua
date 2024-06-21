@@ -58,14 +58,16 @@ map(
 map("n", " ", "<Cmd>nohlsearch<CR>", { desc = "Clear highlight" })
 map("n", "<leader>sA", "<Cmd>Telescope<CR>", { desc = "All Telescope" })
 map("n", "<leader>ss", "<Cmd>Telescope treesitter<CR>", { desc = "Symbols (Treesitter)" })
--- d = {
---   "<cmd>lua require('telescope.builtin').live_grep({ cwd = require('telescope.utils').buffer_dir() })<CR>",
---   'Live grep in current directory',
--- },
+map(
+  "n",
+  "<leader>sG",
+  "<cmd>lua require('telescope.builtin').live_grep({ cwd = require('telescope.utils').buffer_dir() })<cr>",
+  { desc = "Grep (Current Directory)" }
+)
 map(
   "n",
   "<leader>sB",
-  "<cmd>lua require('telescope.builtin').live_grep({grep_open_files=true})",
+  "<cmd>lua require('telescope.builtin').live_grep({grep_open_files=true})<cr>",
   { desc = "Grep open buffers" }
 )
 

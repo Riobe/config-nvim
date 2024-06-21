@@ -10,6 +10,8 @@ return {
     { "<leader>sp", "<cmd>Telescope projects<cr>", desc = "Projects" },
     -- I'm switching to treesitter symbols, so I'm unmapping the default
     { "<leader>ss", false },
+    -- I want this one to search the current directory
+    { "<leader>sG", false },
   },
   opts = {
     defaults = {
