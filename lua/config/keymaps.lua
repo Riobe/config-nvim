@@ -21,7 +21,7 @@ map("i", "<C-h>", "<C-o>h", { desc = "Move to the left in insert mode." })
 map("i", "<C-j>", "<C-o>O", { desc = "Move to a new line above the current" })
 
 -- # Buffers
-map("n", "<C-\\>", "<cmd>bprevious<cr>", { desc = "Previous Buffer" })
+map("n", "<C-\\>", "<cmd>b #<cr>", { desc = "Last Buffer" })
 -- TODO: This would be nice to get working, but unmaps unimpaired too
 -- Unmap the default buffer switch mappings, to let vim-unimpaired take over
 -- unmap("n", "[b") -- Default: "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Buffer" }
