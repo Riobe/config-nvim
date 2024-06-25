@@ -11,6 +11,21 @@ return {
         "neotest-jest",
         "neotest-python",
       },
+      icons = {
+        -- expanded = "▶",
+        -- child_prefix = "⧋",
+        -- child_indent = "▸",
+        -- final_child_prefix = "▹",
+        -- non_collapsible = "◬",
+        -- collapsed = "◂",
+        -- unknown = "?",
+
+        passed = "✓",
+        running = "⋯",
+        failed = "✗",
+        skipped = "?",
+        watching = "☉",
+      },
     },
   },
 }
