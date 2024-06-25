@@ -105,7 +105,7 @@ map("n", "<leader>dh", "<cmd>DiffviewFileHistory<cr>", { desc = "File History" }
 map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close Diff" })
 
 -- # Terminal
-map("n", "<leader>tt", "<cmd>terminal<cr>i", { desc = "Terminal" })
+map("n", "<leader>T", "<cmd>terminal<cr>i", { desc = "Terminal" })
 
 -- # VS Tasks
 map("n", "<leader>vt", "<cmd>lua require('telescope').extensions.vstask.tasks()<CR>", { desc = "Tasks" })
