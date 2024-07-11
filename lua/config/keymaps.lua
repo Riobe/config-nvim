@@ -102,10 +102,10 @@ map("n", "<C-t>", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Defini
 map("n", "<leader>ct", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Type Definition" })
 
 -- # Git
-map("n", "<leader>dd", "<cmd>DiffviewFileHistory %<cr>", { desc = "Diff Current with Main" })
-map("n", "<leader>dm", "<cmd>DiffviewOpen origin/main...HEAD<cr>", { desc = "Diff with Main" })
-map("n", "<leader>dh", "<cmd>DiffviewFileHistory<cr>", { desc = "File History" })
-map("n", "<leader>dc", "<cmd>DiffviewClose<cr>", { desc = "Close Diff" })
+map("n", "<leader>gdd", "<cmd>DiffviewFileHistory %<cr>", { desc = "Diff Current with Main" })
+map("n", "<leader>gdm", "<cmd>DiffviewOpen origin/main...HEAD<cr>", { desc = "Diff with Main" })
+map("n", "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", { desc = "File History" })
+map("n", "<leader>gdc", "<cmd>DiffviewClose<cr>", { desc = "Close Diff" })
 
 -- # Terminal
 map("n", "<leader>T", "<cmd>terminal<cr>i", { desc = "Terminal" })
