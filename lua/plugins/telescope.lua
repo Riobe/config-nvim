@@ -50,5 +50,17 @@ return {
         },
       },
     },
+
+    extensions = {
+      file_browser = {
+        -- disables netrw and use telescope-file-browser in its place
+        hijack_netrw = true,
+      },
+    },
   },
+
+  config = function(_, opts)
+    require("telescope").load_extension("file_browser")
+    require("telescope").setup(opts)
+  end,
 }
