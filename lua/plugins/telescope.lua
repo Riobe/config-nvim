@@ -2,6 +2,7 @@ local actions = require("telescope.actions")
 
 return {
   "nvim-telescope/telescope.nvim",
+
   keys = {
     { "<C-p>", LazyVim.pick("auto"), desc = "Find Files (Root Dir)" },
     { "<C-s>", LazyVim.pick("live_grep"), desc = "Grep (Root Dir)" },
@@ -13,6 +14,7 @@ return {
     -- I want this one to search the current directory
     { "<leader>sG", false },
   },
+
   opts = {
     defaults = {
       layout_strategy = "vertical",
@@ -50,17 +52,5 @@ return {
         },
       },
     },
-
-    extensions = {
-      file_browser = {
-        -- disables netrw and use telescope-file-browser in its place
-        hijack_netrw = true,
-      },
-    },
   },
-
-  config = function(_, opts)
-    require("telescope").load_extension("file_browser")
-    require("telescope").setup(opts)
-  end,
 }
