@@ -13,6 +13,8 @@ return {
     { "<leader>ss", false },
     -- I want this one to search the current directory
     { "<leader>sG", false },
+    -- I want this one to pull up the current file in NERDTree
+    { "<leader>ff", false },
   },
 
   opts = {
