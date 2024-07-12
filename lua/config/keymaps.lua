@@ -81,7 +81,6 @@ map("n", "<C-q>", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzz
 unmap("n", "<leader>fe")
 map("n", "<leader>fe", "<cmd>NERDTreeToggle<cr>", { desc = "Exploreer NERDTree" })
 map("n", "<C-n>", "<cmd>NERDTreeToggle<cr>", { desc = "Explorer NERDTree" })
-unmap("n", "<leader>ff")
 map("n", "<leader>ff", "<cmd>NERDTreeFind<cr>", { desc = "File (Current) in NERDTree" })
 map("n", "<leader>k", "<cmd>Telescope grep_string<CR>", { desc = "Grep String Under Cursor" })
 
