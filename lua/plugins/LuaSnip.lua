@@ -41,7 +41,6 @@ return {
     local random_name = require("../snip-functions/random_name")
     local uuid = require("../snip-functions/uuid")
 
-    print("adding snippets")
     -- examples found at https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190
     -- docs found https://github.com/L3MON4D3/LuaSnip/tree/master
     luaSnip.add_snippets("all", {
@@ -67,6 +66,5 @@ return {
         end),
       }),
     })
-    print("Done adding snippets")
   end,
 }
