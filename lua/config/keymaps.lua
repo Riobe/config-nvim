@@ -96,7 +96,12 @@ unmap("n", "gco") -- Default: "o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc
 unmap("n", "gcO") -- Default: "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Comment Above" }
 
 -- # LSP
-map("n", "<C-m>", "<cmd>Telescope lsp_references<cr>", { desc = "Goto References" })
+map(
+  "n",
+  "<C-m>",
+  "<cmd>lua require('telescope.builtin').lsp_references({ file_ignore_patterns = { '%.spec.ts' } })<cr>",
+  { desc = "Goto Non-Test References" }
+)
 map("n", "<C-t>", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
 map("n", "<leader>ct", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Type Definition" })
 
