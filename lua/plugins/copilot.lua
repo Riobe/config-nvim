@@ -4,8 +4,9 @@ return {
     suggestion = {
       enabled = true,
       auto_trigger = true,
+      hide_during_completion = true,
       keymap = {
-        accept = "<C-f>",
+        accept = "<C-a>",
         accept_word = false,
         accept_line = false,
         next = "<C-d>",
