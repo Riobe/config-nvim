@@ -22,8 +22,7 @@ return {
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "<leader>v", group = "tasks" },
         { "<leader>w", desc = "write" },
-        -- TODO: Do I need this?
-        -- { "<leader>w", "<cmd>update<cr>", desc = "Write", group = nil },
+        { "<leader>wm", hidden = true },
         { "<leader>y", group = "copy" },
       },
     },

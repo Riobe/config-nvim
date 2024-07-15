@@ -35,14 +35,13 @@ map("n", "<leader><leader>w", "<cmd>wa<cr><esc>", { desc = "Save All Files" })
 
 -- # Windows
 LazyVim.toggle.map("<C-w>m", LazyVim.toggle.maximize)
+unmap("n", "<leader>wm")
 unmap("n", "<leader>ww")
 unmap("n", "<leader>wd")
 unmap("n", "<leader>w-")
 unmap("n", "<leader>w|")
 unmap("n", "<leader>-")
 unmap("n", "<leader>|")
--- TODO: How to make this take?!
-unmap("n", "<leader>wm")
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
