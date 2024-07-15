@@ -14,16 +14,17 @@ return {
   init = function()
     require("luasnip.loaders.from_vscode").lazy_load()
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./vscode-snippets" } })
-    local ls = require("luasnip")
+
+    local luaSnip = require("luasnip")
 
     -- some shorthands...
-    local s = ls.snippet
-    local sn = ls.snippet_node
-    local t = ls.text_node
+    local snippet = luaSnip.snippet
+    local snippetNode = luaSnip.snippet_node
+    local textNode = luaSnip.text_node
+    local dynamicNode = luaSnip.dynamic_node
     -- local i = ls.insert_node
     -- local f = ls.function_node
     -- local c = ls.choice_node
-    local d = ls.dynamic_node
     -- local r = ls.restore_node
     -- local l = require("luasnip.extras").lambda
     -- local rep = require("luasnip.extras").rep
@@ -37,34 +38,35 @@ return {
     -- local conds = require("luasnip.extras.conditions")
     -- local conds_expand = require("luasnip.extras.conditions.expand")
 
-    local random_name = require("../custom/random_name")
-    local uuid = require("../custom/uuid")
+    local random_name = require("../snip-functions/random_name")
+    local uuid = require("../snip-functions/uuid")
 
-    -- local function copy(args)
-    --   return args[1]
-    -- end
-
+    print("adding snippets")
     -- examples found at https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua#L190
     -- docs found https://github.com/L3MON4D3/LuaSnip/tree/master
-    ls.add_snippets("all", {
-      s({
+    luaSnip.add_snippets("all", {
+      snippet("helloworld", textNode("Hello, World!")),
+
+      snippet({
         trig = "uuid",
         name = "UUID",
         dscr = "Generate a unique UUID",
       }, {
-        d(1, function()
-          return sn(nil, t(uuid()))
+        dynamicNode(1, function()
+          return snippetNode(nil, textNode(uuid()))
         end),
       }),
-      s({
+
+      snippet({
         trig = "randomname",
         name = "Random Name",
         dscr = "Generate a docker friendly random name.",
       }, {
-        d(1, function()
-          return sn(nil, t(random_name()))
+        dynamicNode(1, function()
+          return snippetNode(nil, textNode(random_name()))
         end),
       }),
     })
+    print("Done adding snippets")
   end,
 }
