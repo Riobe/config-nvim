@@ -1,26 +1,26 @@
 return {
   "folke/which-key.nvim",
-  opts = function()
-    return {
+  opts = {
+    spec = {
       plugins = { spelling = true },
       defaults = {
         mode = { "n", "v" },
-        ["g"] = { name = "+goto" },
-        ["gs"] = { name = "+surround" },
-        ["z"] = { name = "+fold" },
-        ["]"] = { name = "+next" },
-        ["["] = { name = "+prev" },
-        ["<leader><tab>"] = { name = "+tabs" },
-        ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>gh"] = { name = "+hunks" },
-        ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
-        ["<leader>x"] = { name = "+diagnostics/quickfix" },
+        { "g", group = "goto" },
+        { "gs", group = "surround" },
+        { "z", group = "fold" },
+        { "[", group = "prev" },
+        { "]", group = "next" },
+        { "<leader><tab>", group = "tabs" },
+        { "<leader>b", group = "buffer" },
+        { "<leader>c", group = "code" },
+        { "<leader>f", group = "file/find" },
+        { "<leader>g", group = "git" },
+        { "<leader>gh", group = "hunks" },
+        { "<leader>q", group = "quit/session" },
+        { "<leader>s", group = "search" },
+        { "<leader>u", group = "ui" },
+        { "<leader>x", group = "diagnostics/quickfix" },
       },
-    }
-  end,
+    },
+  },
 }
