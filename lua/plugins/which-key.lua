@@ -20,6 +20,8 @@ return {
         { "<leader>s", group = "search" },
         { "<leader>u", group = "ui" },
         { "<leader>x", group = "diagnostics/quickfix" },
+        { "<leader>v", group = "tasks" },
+        { "<leader>y", group = "copy" },
       },
     },
   },
