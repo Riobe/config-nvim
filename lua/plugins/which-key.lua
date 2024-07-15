@@ -3,7 +3,7 @@ return {
   opts = {
     spec = {
       plugins = { spelling = true },
-      defaults = {
+      {
         mode = { "n", "v" },
         { "g", group = "goto" },
         { "gs", group = "surround" },
@@ -18,9 +18,12 @@ return {
         { "<leader>gh", group = "hunks" },
         { "<leader>q", group = "quit/session" },
         { "<leader>s", group = "search" },
-        { "<leader>u", group = "ui" },
-        { "<leader>x", group = "diagnostics/quickfix" },
+        { "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
+        { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "<leader>v", group = "tasks" },
+        { "<leader>w", desc = "Write" },
+        -- TODO: Do I need this?
+        -- { "<leader>w", "<cmd>update<cr>", desc = "Write", group = nil },
         { "<leader>y", group = "copy" },
       },
     },

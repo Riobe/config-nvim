@@ -5,7 +5,7 @@ return {
       enabled = true,
       auto_trigger = true,
       keymap = {
-        accept = "<C-F>",
+        accept = "<C-f>",
         accept_word = false,
         accept_line = false,
         next = "<C-d>",
