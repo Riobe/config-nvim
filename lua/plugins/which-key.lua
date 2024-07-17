@@ -8,7 +8,6 @@ return {
         { "<leader><leader>", group = "additional" },
         { "<leader>v", group = "tasks" },
         { "<leader>w", desc = "write" },
-        { "<leader>wm", hidden = true },
         { "<leader>y", group = "copy" },
       },
     },
