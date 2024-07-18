@@ -11,10 +11,6 @@ return {
         "neotest-plenary",
         ["neotest-jest"] = {
           jestConfigFile = function(file)
-            -- if string.find(file, "/packages/") then
-            --   return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
-            -- end
-
             if vim.fn.filereadable(vim.fn.getcwd() .. "/jest-unit.config.js") == 1 then
               print("Detected jest-unit.config.js")
               return vim.fn.getcwd() .. "/jest-unit.config.js"
