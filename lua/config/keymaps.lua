@@ -22,10 +22,12 @@ map("i", "<C-j>", "<C-o>O", { desc = "Move to a new line above the current" })
 
 -- # Buffers
 map("n", "<C-\\>", "<cmd>b #<cr>", { desc = "Last Buffer" })
--- TODO: This would be nice to get working, but unmaps unimpaired too
--- Unmap the default buffer switch mappings, to let vim-unimpaired take over
--- unmap("n", "[b") -- Default: "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous Buffer" }
--- unmap("n", "]b") -- Default: "<cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" }
+map("n", "]b", function()
+  return "<cmd>" .. vim.v.count1 .. "bnext<CR>"
+end, { desc = "Next Buffer", expr = true })
+map("n", "[b", function()
+  return "<cmd>" .. vim.v.count1 .. "bprev<CR>"
+end, { desc = "Next Buffer", expr = true })
 
 -- # Saving
 map("n", "<leader>w", "<cmd>update<cr>", { desc = "Write File" })
