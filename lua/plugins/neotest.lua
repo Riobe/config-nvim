@@ -5,12 +5,28 @@ return {
   { "nvim-neotest/neotest-python" },
   {
     "nvim-neotest/neotest",
+
     opts = {
       adapters = {
         "neotest-plenary",
-        "neotest-jest",
+        ["neotest-jest"] = {
+          jestConfigFile = function(file)
+            -- if string.find(file, "/packages/") then
+            --   return string.match(file, "(.-/[^/]+/)src") .. "jest.config.ts"
+            -- end
+
+            if vim.fn.filereadable(vim.fn.getcwd() .. "/jest-unit.config.js") == 1 then
+              print("Detected jest-unit.config.js")
+              return vim.fn.getcwd() .. "/jest-unit.config.js"
+            end
+
+            print("Using default jest.config.ts")
+            return vim.fn.getcwd() .. "/jest.config.ts"
+          end,
+        },
         "neotest-python",
       },
+
       icons = {
         -- expanded = "▶",
         -- child_prefix = "⧋",
