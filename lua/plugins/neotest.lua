@@ -11,12 +11,10 @@ return {
         "neotest-plenary",
         ["neotest-jest"] = {
           jestConfigFile = function(file)
-            if vim.fn.filereadable(vim.fn.getcwd() .. "/jest-unit.config.js") == 1 then
-              print("Detected jest-unit.config.js")
-              return vim.fn.getcwd() .. "/jest-unit.config.js"
+            if vim.fn.filereadable(vim.fn.getcwd() .. "/jest-qa.config.js") == 1 then
+              return vim.fn.getcwd() .. "/jest-qa.config.js"
             end
 
-            print("Using default jest.config.ts")
             return vim.fn.getcwd() .. "/jest.config.ts"
           end,
         },
