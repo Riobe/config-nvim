@@ -1,5 +1,4 @@
 return {
-  -- TODO: Fix the icons this shows from ?'s to something pretty
   { "nvim-neotest/neotest-plenary" },
   { "nvim-neotest/neotest-jest" },
   { "nvim-neotest/neotest-python" },
@@ -22,14 +21,6 @@ return {
       },
 
       icons = {
-        -- expanded = "▶",
-        -- child_prefix = "⧋",
-        -- child_indent = "▸",
-        -- final_child_prefix = "▹",
-        -- non_collapsible = "◬",
-        -- collapsed = "◂",
-        -- unknown = "?",
-
         passed = "✓",
         running = "⋯",
         failed = "✗",
