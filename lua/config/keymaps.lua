@@ -46,7 +46,7 @@ map("n", "<leader><leader>w", "<cmd>wa<cr><esc>", { desc = "Save All Files" })
 -- # Windows
 unmap("n", "<leader>-") -- Default: <C-w>s
 unmap("n", "<leader>|") -- Default: <C-w>v
-LazyVim.ui.maximize():map("<C-w>m")
+-- LazyVim.ui.maximize():map("<C-w>m")
 map("t", "<C-H>", "<C-\\><C-N><C-w>h", { desc = "Move to the left in terminal mode." })
 map("t", "<C-J>", "<C-\\><C-N><C-w>j", { desc = "Move down in terminal mode." })
 map("t", "<C-K>", "<C-\\><C-N><C-w>k", { desc = "Move up in terminal mode." })
