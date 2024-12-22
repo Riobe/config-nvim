@@ -142,6 +142,10 @@ opt.wildmode = "longest,full" -- Command-line completion mode | Default "longest
 -- specified.  "longest" and "list" do not start "wildmenu" mode.
 opt.wildmenu = true
 
+-- Snacks animations
+-- Set to `false` to globally disable all snacks animations
+vim.g.snacks_animate = false
+
 -- opt.winminwidth = 5 -- Minimum window width
 opt.wrap = true -- Disable line wrap
 
