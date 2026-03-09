@@ -1,7 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot",
-    "lazyvim.plugins.extras.ai.copilot-chat",
     "lazyvim.plugins.extras.coding.luasnip",
     "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.outline",
@@ -21,8 +19,9 @@
     "lazyvim.plugins.extras.util.project",
     "lazyvim.plugins.extras.util.rest"
   ],
+  "install_version": 7,
   "news": {
-    "NEWS.md": "10960"
+    "NEWS.md": "11866"
   },
-  "version": 7
+  "version": 8
 }

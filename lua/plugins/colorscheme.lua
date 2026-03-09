@@ -4,7 +4,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = { "catppuccin-mocha" },
+      colorscheme = "catppuccin-mocha",
+      -- colorscheme = { "catppuccin-mocha" },
       -- colorscheme = { "evening" },
       -- use('tomasiser/vim-code-dark')
     },

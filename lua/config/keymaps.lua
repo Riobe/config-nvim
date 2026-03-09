@@ -93,7 +93,7 @@ map("n", "<C-q>", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Fuzz
 unmap("n", "<leader>fe")
 map("n", "<leader>fe", "<cmd>NERDTreeToggle<cr>", { desc = "Exploreer NERDTree" })
 map("n", "<C-n>", "<cmd>NERDTreeToggle<cr>", { desc = "Explorer NERDTree" })
-map("n", "<leader>ff", "<cmd>NERDTreeFind<cr>", { desc = "File (Current) in NERDTree" })
+map("n", "<C-]>", "<cmd>NERDTreeFind<cr>", { desc = "File (Current) in NERDTree" })
 map("n", "<leader>k", "<cmd>Telescope grep_string<CR>", { desc = "Grep String Under Cursor" })
 
 -- # Keywordprg
@@ -162,6 +162,7 @@ map("t", "<C-[><C-]>", "<Esc>", { desc = "Send escape to terminal" })
 
 -- # VS Tasks
 map("n", "<leader>vt", "<cmd>lua require('telescope').extensions.vstask.tasks()<CR>", { desc = "Tasks" })
+map("n", "<leader>vr", "<cmd>lua require('telescope').extensions.vstask.run()<CR>", { desc = "Run Custom" })
 map("n", "<leader>vi", "<cmd>lua require('telescope').extensions.vstask.inputs()<CR>", { desc = "Task Inputs" })
 map("n", "<leader>vc", "<cmd>lua require('telescope').extensions.vstask.close()<CR>", { desc = "Close Tasks" })
 map("n", "<leader>vj", "<cmd>lua require('telescope').extensions.vstask.jobs()<CR>", { desc = "Jobs" })
@@ -175,3 +176,12 @@ map("n", "<leader>A", "<cmd>A<cr>", { desc = "Flip to alternate (spec) file" })
 
 -- # Copy
 map("n", "<leader>yf", "<cmd>call setreg('+' , expand('%'))<CR>", { desc = "Copy Filename to Clipboard" })
+
+-- # Debug
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+map("n", "<leader>dx", "<cmd>DapClearBreakpoints<CR>", { desc = "Clear Breakpoints" })
+map("n", "<leader>dc", "<cmd>DapContinue<CR>", { desc = "Debug - Continue" })
+map("n", "<leader>di", "<cmd>DapStepInto<CR>", { desc = "Debug - Step Into" })
+map("n", "<leader>do", "<cmd>DapStepOver<CR>", { desc = "Debug - Step Over" })
+map("n", "<leader>dO", "<cmd>DapStepOut<CR>", { desc = "Debug - Step Out" })
+map("n", "<leader>d<C-C>", "<cmd>DapTerminate<CR>", { desc = "Debug - Terminate" })
