@@ -19,6 +19,10 @@ return {
     "ThePrimeagen/harpoon",
   },
   config = function()
-    require("vstask").setup()
+    require("vstask").setup({
+      telescope_keys = {
+        kill_job = "<C-k>",
+      },
+    })
   end,
 }
