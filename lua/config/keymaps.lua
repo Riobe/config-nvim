@@ -61,6 +61,7 @@ map(
   { desc = "Redraw / Clear hlsearch / Diff Update / Refresh" }
 )
 map("n", "<leader>;", "<cmd>Telescope commands<CR>", { desc = "Commands" })
+map("n", "<leader><leader>s", "<cmd>%s/\\r//g<CR>", { desc = "Remove Windows Newlines" })
 
 -- # Search
 map("n", " ", "<Cmd>nohlsearch<CR>", { desc = "Clear highlight" })
