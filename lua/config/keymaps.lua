@@ -116,6 +116,7 @@ map(
   { desc = "Goto Non-Test References" }
 )
 map("n", "<C-t>", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition" })
+map("n", "<leader><C-t>", "<C-W><C-V><cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Goto Definition (New Pane)" })
 map("n", "<leader>ct", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Type Definition" })
 
 -- # Code
