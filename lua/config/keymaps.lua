@@ -152,8 +152,9 @@ map("n", "<leader>cq", function()
 end, { desc = "Toggle quickfix" })
 
 -- # Git
-map("n", "<leader>gdd", "<cmd>DiffviewFileHistory %<cr>", { desc = "Diff Current with Main" })
+map("n", "<leader>gdH", "<cmd>DiffviewFileHistory %<cr>", { desc = "Current File History" })
 map("n", "<leader>gdm", "<cmd>DiffviewOpen origin/main...HEAD<cr>", { desc = "Diff with Main" })
+map("n", "<leader>gdd", "<cmd>DiffviewOpen origin/dev...HEAD<cr>", { desc = "Diff with Dev" })
 map("n", "<leader>gdh", "<cmd>DiffviewFileHistory<cr>", { desc = "File History" })
 map("n", "<leader>gdc", "<cmd>DiffviewClose<cr>", { desc = "Close Diff" })
 
