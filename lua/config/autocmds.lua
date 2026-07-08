@@ -19,6 +19,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+local set_filetype_augroup = vim.api.nvim_create_augroup("set_filetype", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.soql" },
+  group = set_filetype_augroup,
+  callback = function()
+    vim.cmd("set filetype=soql")
+  end,
+})
+
+-- Not sure this is still needed
 local augroup = vim.api.nvim_create_augroup("typescript_make", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "typescript,typescriptreact",
