@@ -165,7 +165,7 @@ map("t", "<C-[><C-]>", "<Esc>", { desc = "Send escape to terminal" })
 
 -- # VS Tasks
 map("n", "<leader>vt", "<cmd>lua require('telescope').extensions.vstask.tasks()<CR>", { desc = "Tasks" })
-map("n", "<leader>vr", "<cmd>lua require('telescope').extensions.vstask.run()<CR>", { desc = "Run Custom" })
+map("n", "<leader>vr", "<cmd>lua require('vstask').command()<CR>", { desc = "Run Custom" })
 map("n", "<leader>vi", "<cmd>lua require('telescope').extensions.vstask.inputs()<CR>", { desc = "Task Inputs" })
 map("n", "<leader>vc", "<cmd>lua require('telescope').extensions.vstask.close()<CR>", { desc = "Close Tasks" })
 map("n", "<leader>vj", "<cmd>lua require('telescope').extensions.vstask.jobs()<CR>", { desc = "Jobs" })
@@ -188,3 +188,6 @@ map("n", "<leader>di", "<cmd>DapStepInto<CR>", { desc = "Debug - Step Into" })
 map("n", "<leader>do", "<cmd>DapStepOver<CR>", { desc = "Debug - Step Over" })
 map("n", "<leader>dO", "<cmd>DapStepOut<CR>", { desc = "Debug - Step Out" })
 map("n", "<leader>d<C-C>", "<cmd>DapTerminate<CR>", { desc = "Debug - Terminate" })
+
+-- # Database
+map("n", "<leader>D", "<cmd>lua require('dbee').toggle()<CR>", { desc = "Open Database View" })
